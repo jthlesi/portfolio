@@ -1,0 +1,88 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+.fullpage{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#main{
+    background: black;
+    #cube_wrap {
+        width: 100%;
+        height: 100vh;
+        #cube {
+            position: relative;
+            height: 50vh;
+            width: 50vh;
+            top:25vh;
+            margin: 0 auto;
+            animation : spin 8s infinite linear;
+            transform-style: preserve-3d;
+            .cube_face{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            #cube {
+                &_1 {
+                    transform: rotateX(90deg) translateZ(25vh); 
+                    background: #ffffff;
+                } 
+                &_2 { 
+                    transform: translateZ(25vh); 
+                    background: #fdfdfd;
+                }
+                &_3 { 
+                    transform: rotateY(90deg) translateZ(25vh); 
+                    background: #f4f4f4;
+                }
+                &_4 { 
+                    transform: rotateY(180deg) translateZ(25vh); 
+                    background: #f7f7f7;
+                }
+                &_5 { 
+                    transform: rotateY(-90deg) translateZ(25vh); 
+                    background: #ededed;
+                }
+                &_6 { 
+                    transform: rotateX(-90deg) translateZ(25vh); 
+                    background: #e7e7e7;
+                }
+            }
+        }
+    }
+
+    #text_wrap{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        width: 100%;
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 10em;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+    }
+}
+
+@keyframes spin {
+    from { 
+        transform: rotateY(0) rotateX(0); 
+    }
+    to   { 
+        transform: rotateY(-360deg) rotateX(360deg);
+    }
+}
+
+
+
+
+
+
