@@ -13,7 +13,7 @@ html, body {
 }
 
 #main {
-  background: black;
+  background: #1e1e1e;
 }
 #main #cube_wrap {
   width: 100%;
@@ -24,7 +24,7 @@ html, body {
   height: 50vh;
   width: 50vh;
   top: 25vh;
-  margin: 0 auto;
+  left: calc(50% - 25vh);
   -webkit-animation: spin 8s infinite linear;
           animation: spin 8s infinite linear;
   transform-style: preserve-3d;
@@ -68,7 +68,7 @@ html, body {
   color: white;
   text-align: center;
   font-size: 10em;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 #1e1e1e, 0 1px #1e1e1e, 1px 0 #1e1e1e, 0 -1px #1e1e1e;
 }
 
 @-webkit-keyframes spin {
@@ -86,5 +86,21 @@ html, body {
   }
   to {
     transform: rotateY(-360deg) rotateX(360deg);
+  }
+}
+@-webkit-keyframes spin_back {
+  from {
+    transform: rotateY(-180deg) rotateX(180deg);
+  }
+  to {
+    transform: rotateY(0) rotateX(0);
+  }
+}
+@keyframes spin_back {
+  from {
+    transform: rotateY(-180deg) rotateX(180deg);
+  }
+  to {
+    transform: rotateY(0) rotateX(0);
   }
 }

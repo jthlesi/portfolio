@@ -11,8 +11,10 @@ html, body{
     position: relative;
 }
 
+$back :#1e1e1e;
+
 #main{
-    background: black;
+    background: $back;
     #cube_wrap {
         width: 100%;
         height: 100vh;
@@ -21,7 +23,7 @@ html, body{
             height: 50vh;
             width: 50vh;
             top:25vh;
-            margin: 0 auto;
+            left:calc(50% - 25vh);
             animation : spin 8s infinite linear;
             transform-style: preserve-3d;
             .cube_face{
@@ -67,7 +69,7 @@ html, body{
             color: white;
             text-align: center;
             font-size: 10em;
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
         }
     }
 }
@@ -81,8 +83,13 @@ html, body{
     }
 }
 
-
-
-
+@keyframes spin_back {
+    from { 
+        transform: rotateY(-180deg) rotateX(180deg);
+    }
+    to   { 
+        transform: rotateY(0) rotateX(0);
+    }
+}
 
 
