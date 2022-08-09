@@ -3,14 +3,23 @@ function move(page) {
     scrollCount = page;
     console.log(scrollCount)
 }
-$(window).on("scroll mousewheel", function(event){
 
-    if (event.originalEvent.wheelDelta >= 0) {
+var s=false;
+var stop = function(){ 
+    setTimeout(function(){
+        s=false;
+    },2500);
+}
+
+$(window).on("scroll wheel", function(event){
+
+    if (event.originalEvent.wheelDelta >= 0 && !s) {
         move(scrollCount-1);
         if (scrollCount<0){
             scrollCount=0;
         }
         if (scrollCount==0){
+            s=true;
             $("#introduce").animate({"margin-top":"100vh"});
             setTimeout(function(){
                 $("#cube_2").stop().animate({"width":"50vh","height":"50vh","left":"0","top":"0"});
@@ -24,11 +33,18 @@ $(window).on("scroll mousewheel", function(event){
             setTimeout(function(){
                 $("#cube").css({"animation":"spin 8s linear infinite"});
             },2300);
+            stop();
+        } else if (scrollCount==1){
+            s=true;
+            $("#skill").fadeOut();
+            $("#profile").fadeIn();
+            stop();
         }
 
-    }else{
+    }else if(event.originalEvent.wheelDelta < 0 && !s){
         move(scrollCount+1)
         if (scrollCount==1){
+            s=true;
             var calc= (-$(window).width()/2 + $(window).height()/4)
 
             for (i=0;i<20;i++){
@@ -45,7 +61,12 @@ $(window).on("scroll mousewheel", function(event){
                 $("#introduce").animate({"margin-top":"-100vh"});
 
             },2300)
+            stop();
         } else if (scrollCount==2){
+            s=true;
+            $("#profile").fadeOut();
+            $("#skill").fadeIn();
+            stop();
         }
     }
 })

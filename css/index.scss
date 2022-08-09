@@ -10,15 +10,15 @@ html, body{
     height: 100%;
     position: relative;
     #scroll_spin {
-        width: 120px;
-        height: 120px;
+        width: 160px;
+        height: 160px;
         position: fixed;
         bottom: 50px;
         right: 50px;
         z-index: 100;
-        mix-blend-mode: exclusion;
         animation: scroll_spin 15s both linear infinite;
         background: url(../img/Untitled-1.png) center no-repeat;
+
     }
 }
 .fullpage{
@@ -95,12 +95,35 @@ $back :#2e2e2e;
 #introduce {
     background: violet;
     height: auto;
-    #container {
+    .container {
         width: 1200px;
         height: 100vh;
         margin: 0 auto;
         padding: 10vh 0;
         background: rebeccapurple;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: space-between;
+        #pic {
+            width: 300px;
+            height: 45vh;
+            background: goldenrod;
+        }
+        #about {
+            margin-left: 100px;
+            width: 700px;
+            height: 45vh;
+            background: forestgreen;
+        }
+        #comment {
+            width: 1100px;
+            height: 30vh;
+            background: firebrick;
+        }
+    }
+    #skill {
+        background: fuchsia;
     }
 }
 
