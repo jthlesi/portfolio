@@ -6,32 +6,31 @@ html, body {
       overscroll-behavior: contain;
 }
 
+.fullpage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #2e2e2e;
+}
+
 #page_wrap {
   width: 100%;
   height: 100%;
   position: relative;
 }
-#page_wrap #scroll_spin {
-  width: 160px;
-  height: 160px;
+
+#scroll_spin {
+  width: 100px;
+  height: 100px;
   position: fixed;
   bottom: 50px;
   right: 50px;
   z-index: 100;
   -webkit-animation: scroll_spin 15s both linear infinite;
           animation: scroll_spin 15s both linear infinite;
-  background: url(../img/Untitled-1.png) center no-repeat;
+  background: url(../img/spin_white.svg) center/cover no-repeat;
 }
 
-.fullpage {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#main {
-  background: #2e2e2e;
-}
 #main #cube_wrap {
   width: 100%;
   height: 100vh;
@@ -90,8 +89,22 @@ html, body {
   display: inline-block;
 }
 
+#square {
+  width: auto;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+  background: #2e2e2e;
+}
+#square .fullpage {
+  float: left;
+  position: absolute;
+}
+
 #introduce {
-  background: violet;
+  width: 100vw;
   height: auto;
 }
 #introduce .container {
@@ -99,7 +112,6 @@ html, body {
   height: 100vh;
   margin: 0 auto;
   padding: 10vh 0;
-  background: rebeccapurple;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -121,24 +133,142 @@ html, body {
   height: 30vh;
   background: firebrick;
 }
-#introduce #skill {
-  background: fuchsia;
+#introduce #skill .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+}
+#introduce #skill .circle .inner_circle {
+  width: 150px;
+  height: 150px;
+  background: #2e2e2e;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#introduce #skill .circle .inner_circle img {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@-webkit-keyframes scroll_spin {
+#portfolio {
+  width: 100vw;
+  height: 100vh;
+  left: 100vw;
+}
+#portfolio .container {
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10vh 0;
+  background: darkblue;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+@-webkit-keyframes square_intro {
+  from {
+    left: 0;
+    transform: rotateY(0deg);
+  }
   to {
+    left: -100vw;
+    transform: rotateY(-45deg);
+  }
+}
+
+@keyframes square_intro {
+  from {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+  to {
+    left: -100vw;
+    transform: rotateY(-45deg);
+  }
+}
+@-webkit-keyframes square_intro_back {
+  from {
+    left: -100vw;
+    transform: rotateY(-45deg);
+  }
+  to {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+}
+@keyframes square_intro_back {
+  from {
+    left: -100vw;
+    transform: rotateY(-45deg);
+  }
+  to {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+}
+@-webkit-keyframes square_port {
+  from {
+    left: 100vw;
+    transform: rotateY(45deg);
+  }
+  to {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+}
+@keyframes square_port {
+  from {
+    left: 100vw;
+    transform: rotateY(45deg);
+  }
+  to {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+}
+@-webkit-keyframes square_port_back {
+  from {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+  to {
+    left: 100vw;
+    transform: rotateY(45deg);
+  }
+}
+@keyframes square_port_back {
+  from {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+  to {
+    left: 100vw;
+    transform: rotateY(45deg);
+  }
+}
+@-webkit-keyframes scroll_spin {
+  from {
     transform: rotate(0deg);
   }
-  from {
+  to {
     transform: rotate(360deg);
   }
 }
-
 @keyframes scroll_spin {
-  to {
+  from {
     transform: rotate(0deg);
   }
-  from {
+  to {
     transform: rotate(360deg);
   }
 }
