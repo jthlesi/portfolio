@@ -10,7 +10,7 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
-  background: #2e2e2e;
+  background: rgb(51, 51, 51);
 }
 
 #page_wrap {
@@ -82,7 +82,7 @@ html, body {
   color: white;
   text-align: center;
   font-size: 10em;
-  text-shadow: -1px 0 #2e2e2e, 0 1px #2e2e2e, 1px 0 #2e2e2e, 0 -1px #2e2e2e;
+  text-shadow: -1px 0 rgb(51, 51, 51), 0 1px rgb(51, 51, 51), 1px 0 rgb(51, 51, 51), 0 -1px rgb(51, 51, 51);
 }
 #main #cube_wrap #text_wrap h1 span {
   position: relative;
@@ -96,7 +96,7 @@ html, body {
   perspective: 1000px;
   overflow: hidden;
   position: relative;
-  background: #2e2e2e;
+  background: rgb(51, 51, 51);
 }
 #square .fullpage {
   float: left;
@@ -106,21 +106,38 @@ html, body {
 #introduce {
   width: 100vw;
   height: auto;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 #introduce .container {
   width: 1200px;
+  position: absolute;
   height: 100vh;
-  margin: 0 auto;
   padding: 10vh 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-between;
 }
-#introduce .container #pic {
+#introduce .container #pic_outer {
   width: 300px;
   height: 45vh;
   background: goldenrod;
+  -webkit-clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
+          clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
+}
+#introduce .container #pic_outer #pic_inner {
+  background: rgb(51, 51, 51);
+  -webkit-clip-path: polygon(0% 12%, 12% 0%, 88% 0%, 100% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 100%, 0% 88%);
+          clip-path: polygon(0% 12%, 12% 0%, 88% 0%, 100% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 100%, 0% 88%);
+}
+#introduce .container #pic_outer #pic_inner #pic {
+  background: goldenrod;
+  -webkit-clip-path: polygon(0% 14%, 10% 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
+          clip-path: polygon(0% 14%, 10% 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
 }
 #introduce .container #about {
   margin-left: 100px;
@@ -133,23 +150,38 @@ html, body {
   height: 30vh;
   background: firebrick;
 }
-#introduce #skill .circle {
+#introduce #skill {
+  top: 150vh;
+  transform: rotateX(-45deg);
+}
+#introduce #skill div {
+  width: 100%;
+  height: 50%;
+}
+#introduce #skill div h2 {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+#introduce #skill div .circle {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   position: relative;
+  float: left;
+  margin: 0 50px;
 }
-#introduce #skill .circle .inner_circle {
+#introduce #skill div .circle .inner_circle {
   width: 150px;
   height: 150px;
-  background: #2e2e2e;
+  background: rgb(51, 51, 51);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#introduce #skill .circle .inner_circle img {
+#introduce #skill div .circle .inner_circle img {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -168,13 +200,167 @@ html, body {
   height: 100vh;
   margin: 0 auto;
   padding: 10vh 0;
-  background: darkblue;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-between;
+  overflow: hidden;
+}
+#portfolio .container h2 {
+  width: 100%;
+  height: 5vh;
+  color: white;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+#portfolio .container #project_wrap {
+  width: 600%;
+  height: 65vh;
+  overflow: hidden;
+}
+#portfolio .container #project_wrap .project {
+  width: 600px;
+  height: 100%;
+  float: left;
+}
+#portfolio .container #project_wrap .project .img_box {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+#portfolio .container #project_wrap .project .img_box img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .container #project_wrap .project .btn_wrap {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#portfolio .container #project_wrap .project .btn_wrap button {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  margin: 0 10px;
+  border: none;
+}
+#portfolio .container .popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.9);
+}
+#portfolio .container .popup .view_box {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 90%;
+  overflow: hidden;
+}
+#portfolio .container .popup .view_box .view {
+  width: 100%;
+}
+#portfolio .container .popup .close {
+  margin-left: 10px;
+  position: absolute;
+  top: 5%;
+  left: 75%;
+  cursor: pointer;
+}
+#portfolio .container .popup .close i {
+  color: white;
+  font-size: 2em;
 }
 
+@-webkit-keyframes square_profile {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+}
+
+@keyframes square_profile {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+}
+@-webkit-keyframes square_profile_back {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes square_profile_back {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes square_skill {
+  from {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes square_skill {
+  from {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes square_skill_back {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+}
+@keyframes square_skill_back {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+}
 @-webkit-keyframes square_intro {
   from {
     left: 0;
@@ -185,7 +371,6 @@ html, body {
     transform: rotateY(-45deg);
   }
 }
-
 @keyframes square_intro {
   from {
     left: 0;

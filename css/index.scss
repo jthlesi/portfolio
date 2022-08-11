@@ -1,4 +1,4 @@
-$back :#2e2e2e;
+$back :rgb(51, 51, 51);
 
 html, body{
     width: 100%;
@@ -112,19 +112,35 @@ html, body{
 #introduce {
     width: 100vw;
     height: auto;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    position: relative;
+    display: flex;
+    justify-content: center;
     .container {
         width: 1200px;
+        position: absolute;
         height: 100vh;
-        margin: 0 auto;
         padding: 10vh 0;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         align-content: space-between;
-        #pic {
+        #pic_outer {
             width: 300px;
             height: 45vh;
             background: goldenrod;
+            clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
+            #pic_inner {
+                background: $back;
+                clip-path: polygon(0% 12%, 12% 0%, 88% 0%, 100% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 100%, 0% 88%);
+
+                #pic{
+                    background: goldenrod;
+                    clip-path: polygon(0% 14%, 10% 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
+        
+                }
+            }
         }
         #about {
             margin-left: 100px;
@@ -139,31 +155,44 @@ html, body{
         }
     }
     #skill {
-        .circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            position: relative;
-
-            .inner_circle {
-                width: 150px;
-                height: 150px;
-                background: $back;
+        top:150vh;
+        transform: rotateX(-45deg);
+        div{
+            width: 100%;
+            height: 50%;
+            h2 {
+                color: white;
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+            .circle {
+                width: 200px;
+                height: 200px;
                 border-radius: 50%;
-                position: absolute;
-                top:50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                img {
-                    width: 80%;
-                    height: 80%;
+                position: relative;
+                float: left;
+                margin: 0 50px;
+                .inner_circle {
+                    width: 150px;
+                    height: 150px;
+                    background: $back;
+                    border-radius: 50%;
                     position: absolute;
                     top:50%;
                     left: 50%;
                     transform: translate(-50%,-50%);
+                    img {
+                        width: 80%;
+                        height: 80%;
+                        position: absolute;
+                        top:50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
                 }
             }
         }
+
     }
 }
 
@@ -176,11 +205,130 @@ html, body{
         height: 100vh;
         margin: 0 auto;
         padding: 10vh 0;
-        background: darkblue;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         align-content: space-between;
+        overflow: hidden;
+        h2 {
+            width: 100%;
+            height: 5vh;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        #project_wrap {
+            width: 600%;
+            height: 65vh;
+            overflow: hidden;
+            .project{
+                width: 600px;
+                height: 100%;
+                float: left;
+                .img_box {
+                    width: 80%;
+                    height: 80%;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .btn_wrap {
+                    width: 100%;
+                    height: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button {
+                        cursor: pointer;
+                        width: 100px;
+                        height: 40px;
+                        margin: 0 10px;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            top:0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(51,51,51,0.9);
+            .view_box{
+                cursor: pointer;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 50%;
+                height: 90%;
+                overflow: hidden;
+                .view {
+                    width: 100%;
+
+                }
+            }
+            .close {
+                margin-left: 10px;
+                position: absolute;
+                top:5%;
+                left:75%;
+                cursor: pointer;
+                i {
+                    color: white;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+
+@keyframes square_profile {
+    from {
+        top:0;
+        transform: rotateX(0deg);
+    }
+    to {
+        top: -150vh;
+        transform: rotateX(45deg);
+    }
+}
+
+@keyframes square_profile_back {
+    from {
+        top: -150vh;
+        transform: rotateX(45deg);
+    }
+    to {
+        top:0;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes square_skill {
+    from {
+        top:150vh;
+        transform: rotateX(-45deg);
+    }
+    to {
+        top: 0;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes square_skill_back {
+    from {
+        top: 0;
+        transform: rotateX(0deg);
+    }
+    to {
+
+        top:150vh;
+        transform: rotateX(-45deg);
     }
 }
 
