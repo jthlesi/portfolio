@@ -125,63 +125,111 @@ html, body {
 #introduce .container #pic_outer {
   width: 300px;
   height: 45vh;
-  background: white;
-  -webkit-clip-path: polygon(0 4.5vh, 4.5vh 0, 95.5vh 0, 100% 0, 100% 4.5vh, 100% 95.5vh, 95.5vh 100%, 4.5vh 100%, 0 100%, 0 95.5vh);
-          clip-path: polygon(0 4.5vh, 4.5vh 0, 95.5vh 0, 100% 0, 100% 4.5vh, 100% 95.5vh, 95.5vh 100%, 4.5vh 100%, 0 100%, 0 95.5vh);
-}
-#introduce .container #pic_outer #pic_inner {
-  width: 300px;
-  height: 45vh;
   background: rgb(51, 51, 51);
-  -webkit-clip-path: polygon(0% 4.95vh, 4.95vh 0%, 95.05vh 0%, 100% 0, 100% 4.95vh, 100% 95.05vh, 95.05vh 100%, 4.95vh 100%, 0 100%, 0% 95.05vh);
-          clip-path: polygon(0% 4.95vh, 4.95vh 0%, 95.05vh 0%, 100% 0, 100% 4.95vh, 100% 95.05vh, 95.05vh 100%, 4.95vh 100%, 0 100%, 0% 95.05vh);
+  position: relative;
+  overflow: hidden;
 }
-#introduce .container #pic_outer #pic_inner #pic {
+#introduce .container #pic_outer::before {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
+  background: white;
+  display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
+}
+#introduce .container #pic_outer::after {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
+  background: white;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  transform: skew(-45deg);
+  margin-left: 272px;
+}
+#introduce .container #pic_outer #pic {
   width: 300px;
+  position: absolute;
+  top: 0;
   height: 45vh;
   background: white;
-  -webkit-clip-path: polygon(0% 6.3vh, 6.3vh 0%, 93.7vh 0%, 100% 0, 100% 6.3vh, 100% 93.7vh, 93.7vh 100%, 6.3vh 100%, 0 100%, 0% 93.7vh);
-          clip-path: polygon(0% 6.3vh, 6.3vh 0%, 93.7vh 0%, 100% 0, 100% 6.3vh, 100% 93.7vh, 93.7vh 100%, 6.3vh 100%, 0 100%, 0% 93.7vh);
+  -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
+          clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
 }
 #introduce .container #about_outer {
   margin-left: 100px;
   width: 700px;
   height: 45vh;
-  background: forestgreen;
-  -webkit-clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
-          clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
-}
-#introduce .container #about_outer #about_inner {
-  height: 45vh;
   background: rgb(51, 51, 51);
-  -webkit-clip-path: polygon(0% 11%, 11% 0%, 89% 0%, 100% 0, 100% 11%, 100% 89%, 89% 100%, 11% 100%, 0 100%, 0% 89%);
-          clip-path: polygon(0% 11%, 11% 0%, 89% 0%, 100% 0, 100% 11%, 100% 89%, 89% 100%, 11% 100%, 0 100%, 0% 89%);
+  position: relative;
+  overflow: hidden;
 }
-#introduce .container #about_outer #about_inner #about {
-  height: 45vh;
+#introduce .container #about_outer::before {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
   background: forestgreen;
-  -webkit-clip-path: polygon(0% 14%, 14% 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
-          clip-path: polygon(0% 14%, 14% 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
+  display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
+}
+#introduce .container #about_outer::after {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
+  background: forestgreen;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  transform: skew(-45deg);
+  margin-left: 672px;
+}
+#introduce .container #about_outer #about {
+  width: 700px;
+  height: 45vh;
+  position: absolute;
+  top: 0;
+  background: forestgreen;
+  -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
+          clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
 }
 #introduce .container #comment_outer {
   width: 1100px;
   height: 30vh;
-  background: firebrick;
-  -webkit-clip-path: polygon(0% 3vh, 110px 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
-          clip-path: polygon(0% 3vh, 110px 0%, 90% 0%, 100% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 100%, 0% 90%);
-}
-#introduce .container #comment_outer #comment_inner {
-  height: 30vh;
   background: rgb(51, 51, 51);
-  -webkit-clip-path: polygon(0% 3.3vh, 121px 0%, 89% 0%, 100% 0, 100% 11%, 100% 89%, 89% 100%, 11% 100%, 0 100%, 0% 89%);
-          clip-path: polygon(0% 3.3vh, 121px 0%, 89% 0%, 100% 0, 100% 11%, 100% 89%, 89% 100%, 11% 100%, 0 100%, 0% 89%);
+  position: relative;
+  overflow: hidden;
 }
-#introduce .container #comment_outer #comment_inner #comment {
-  top: 0;
-  height: 30vh;
-  -webkit-clip-path: polygon(0% 4.2vh, 154px 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
-          clip-path: polygon(0% 4.2vh, 154px 0%, 86% 0%, 100% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 100%, 0% 86%);
+#introduce .container #comment_outer::before {
+  content: "";
+  width: 7px;
+  height: 3.3vh;
   background: firebrick;
+  display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
+}
+#introduce .container #comment_outer::after {
+  content: "";
+  width: 7px;
+  height: 3.3vh;
+  background: firebrick;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  transform: skew(-45deg);
+  margin-left: 1072px;
+}
+#introduce .container #comment_outer #comment {
+  width: 1100px;
+  height: 30vh;
+  position: absolute;
+  top: 0;
+  background: firebrick;
+  -webkit-clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
+          clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
 }
 #introduce #skill {
   top: 150vh;
@@ -313,6 +361,105 @@ html, body {
   font-size: 2em;
 }
 
+#contact {
+  width: 100vw;
+  height: 100vh;
+  top: -150vh;
+}
+#contact .container {
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10vh 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  overflow: hidden;
+  background: khaki;
+}
+
+@-webkit-keyframes square_contact {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes square_contact {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes square_contact_back {
+  from {
+    top: 0vh;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+}
+@keyframes square_contact_back {
+  from {
+    top: 0vh;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+}
+@-webkit-keyframes square_portfolio {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+}
+@keyframes square_portfolio {
+  from {
+    top: 0;
+    transform: rotateX(0deg);
+  }
+  to {
+    top: 150vh;
+    transform: rotateX(-45deg);
+  }
+}
+@-webkit-keyframes square_portfolio_back {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0vh;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes square_portfolio_back {
+  from {
+    top: -150vh;
+    transform: rotateX(45deg);
+  }
+  to {
+    top: 0vh;
+    transform: rotateX(0deg);
+  }
+}
 @-webkit-keyframes square_profile {
   from {
     top: 0;
@@ -323,7 +470,6 @@ html, body {
     transform: rotateX(45deg);
   }
 }
-
 @keyframes square_profile {
   from {
     top: 0;

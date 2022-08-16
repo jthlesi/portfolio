@@ -4,10 +4,20 @@ function move(page) {
 }
 
 var s=false;
-var stop = function(){ 
+var stop_1 = function(){ 
+    setTimeout(function(){
+        s=false;
+    },1100);
+}
+var stop_2 = function(){ 
     setTimeout(function(){
         s=false;
     },2100);
+}
+var stop_3 = function(){ 
+    setTimeout(function(){
+        s=false;
+    },3100);
 }
 
 $(window).on("scroll wheel", function(event){
@@ -32,26 +42,26 @@ $(window).on("scroll wheel", function(event){
                 $("#cube").css({"animation":"spin 8s linear infinite"});
             },2000);
 
-            stop();
+            stop_3();
         } else if (scrollCount==1){
             s=true;
             $("#profile").css({"animation":"square_profile_back 1s linear both"});
             $("#skill").css({"animation":"square_skill_back 1s linear both"});
-            stop();
+            stop_2();
         } else if(scrollCount==2){
             s=true;
             $("#introduce").css({"animation":"square_intro_back 1s linear both"});
             $("#portfolio").css({"animation":"square_port_back 1s linear both"});
             setTimeout(skill(),3000);
-            stop();
+            stop_2();
         }else if(scrollCount==3){
             s=true;
             $("#project_wrap").animate({"margin-left":"0"},"slow")
-            stop();
+            stop_1();
         } else if(scrollCount==4){
             s=true;
             $("#project_wrap").animate({"margin-left":"-1200px"},"slow")
-            stop();
+            stop_1();
         }
 
     }else if(event.originalEvent.wheelDelta < 0 && !s){
@@ -73,26 +83,32 @@ $(window).on("scroll wheel", function(event){
             setTimeout(function(){
                 $("#square").animate({"margin-top":"-100vh"});
             },2000);
-            stop();
+            stop_3();
         } else if (scrollCount==2){
             s=true;
             $("#profile").css({"animation":"square_profile 1s linear both"});
             $("#skill").css({"animation":"square_skill 1s linear both"});
             setTimeout(skill(),3000);
-            stop();
+            stop_2();
         } else if(scrollCount==3){
             s=true;
             $("#introduce").css({"animation":"square_intro 1s linear both"});
             $("#portfolio").css({"animation":"square_port 1s linear both"});
-            stop();
+            stop_2();
         } else if(scrollCount==4){
             s=true;
             $("#project_wrap").animate({"margin-left":"-1200px"},"slow")
-            stop();
+            stop_1();
         } else if(scrollCount==5){
             s=true;
             $("#project_wrap").animate({"margin-left":"-2400px"},"slow")
-            stop();
+            stop_1();
+        } else if (scrollCount==6) {
+            s=true;
+            $("#portfolio").css({"animation":"square_portfolio 1s linear both"});
+            $("#contact").css({"animation":"square_contact 1s linear both"});
+            setTimeout(skill(),3000);
+            stop_2();
         }
     }
 })
