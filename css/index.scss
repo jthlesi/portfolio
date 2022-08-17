@@ -37,7 +37,7 @@ html, body{
     #cube_wrap {
         width: 100%;
         height: 100vh;
-        #cube {
+        .cube {
             position: relative;
             height: 50vh;
             width: 50vh;
@@ -50,7 +50,7 @@ html, body{
                 height: 100%;
                 width: 100%;
             }
-            #cube {
+            .cube {
                 &_1 {
                     transform: rotateX(90deg) translateZ(25vh); 
                     background: #ffffff;
@@ -374,7 +374,7 @@ html, body{
 #contact {
     width: 100vw;
     height: 100vh;
-    top: -150vh;
+    top: 150vh;
     .container {
         width: 1200px;
         height: 100vh;
@@ -389,41 +389,337 @@ html, body{
     }
 }
 
+#footer{
+    #cube_wrap_2 {
+        width: 100%;
+        height: 100vh;
+        .cube {
+            position: relative;
+            height: 50vh;
+            width: 50vh;
+            top:25vh;
+            left:calc(50% - 25vh);
+            animation : spin 8s infinite linear;
+            transform-style: preserve-3d;
+            .cube_face{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .cube {
+                &_1 {
+                    transform: rotateX(90deg) translateZ(25vh); 
+                    background: #ffffff;
+                } 
+                &_2 { 
+                    transform: translateZ(25vh); 
+                    background: #fdfdfd;
+                }
+                &_3 { 
+                    transform: rotateY(90deg) translateZ(25vh); 
+                    background: #f4f4f4;
+                }
+                &_4 { 
+                    transform: rotateY(180deg) translateZ(25vh); 
+                    background: #f7f7f7;
+                }
+                &_5 { 
+                    transform: rotateY(-90deg) translateZ(25vh); 
+                    background: #ededed;
+                }
+                &_6 { 
+                    transform: rotateX(-90deg) translateZ(25vh); 
+                    background: #e7e7e7;
+                }
+            }
+        }
+        #text_wrap_2{
+            position: relative;
+
+            h1 {
+                display: none;
+                margin: -15vh auto;
+                color: white;
+                text-align: center;
+                font-size: 11em;
+                text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
+                // #text_overay {
+                //     display: none;
+                //     position: fixed;
+                //     left: 50%;
+                //     transform: translate(-50%);
+                    // &::before {
+                    //     content: "THANK YOU";
+                    //     position: absolute;
+                    //     width: 100%;
+                    //     height: 10%;
+                    //     left: 0;
+                    //     overflow: hidden;
+                    //     color: white;
+                    //     animation: text_down 2s linear both;
+
+                    //     text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
+                    // }
+
+                    span{
+
+                        position: relative;
+                        display: inline-block;
+                        top:-100vh;
+                    }
+                
+            }
+
+        }
+    }
+}
+
+@keyframes text_drop_0 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:20vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_0_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-20vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_1 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:15vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_1_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-25vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_2 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:7vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_2_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-30vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+@keyframes text_drop_3 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:22vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_3_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-15vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_4 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:14vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_4_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-11vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_6 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:9vh;
+    }
+    100% {
+        top:0;
+    }
+}
+@keyframes text_drop_6_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-7vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_7 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:12vh;
+    }
+    100% {
+        top:0;
+    }
+}
+@keyframes text_drop_7_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-22vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_8 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:17vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_8_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-16vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+// @keyframes text_down {
+//     from {
+//         height: 0%;
+//     }
+//     to {
+//         height: 100%;
+//     }
+// }
+
+
+@keyframes up {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+@keyframes down {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+    }
+}
 
 @keyframes square_contact {
     from {
-        top: -150vh;
-        transform: rotateX(45deg);
+        top:150vh;
+        transform: rotateX(-45deg);
     }
     to {
-        top:0;
+        top: 0;
         transform: rotateX(0deg);
     }
 }
-
-
 
 @keyframes square_contact_back {
-    from {
-        top: 0vh;
-        transform: rotateX(0deg);
-    }
-    to {
-
-        top:-150vh;
-        transform: rotateX(45deg);
-    }
-}
-
-@keyframes square_portfolio{
     from {
         top: 0;
         transform: rotateX(0deg);
     }
     to {
-
         top:150vh;
         transform: rotateX(-45deg);
+    }
+}
+
+@keyframes square_portfolio{
+    from {
+        top:0;
+        transform: rotateX(0deg);
+    }
+    to {
+        top: -150vh;
+        transform: rotateX(45deg);
     }
 }
 
@@ -433,13 +729,10 @@ html, body{
         transform: rotateX(45deg);
     }
     to {
-
-        top:0vh;
+        top:0;
         transform: rotateX(0deg);
     }
 }
-
-
 
 @keyframes square_profile {
     from {
@@ -480,7 +773,6 @@ html, body{
         transform: rotateX(0deg);
     }
     to {
-
         top:150vh;
         transform: rotateX(-45deg);
     }

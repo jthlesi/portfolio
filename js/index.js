@@ -7,17 +7,17 @@ var s=false;
 var stop_1 = function(){ 
     setTimeout(function(){
         s=false;
-    },1100);
+    },500);
 }
 var stop_2 = function(){ 
     setTimeout(function(){
         s=false;
-    },2100);
+    },1600);
 }
 var stop_3 = function(){ 
     setTimeout(function(){
         s=false;
-    },3100);
+    },2500);
 }
 
 $(window).on("scroll wheel", function(event){
@@ -30,7 +30,7 @@ $(window).on("scroll wheel", function(event){
             s=true;
             $("#square").animate({"margin-top":"100vh"});
             setTimeout(function(){
-                $("#cube_2").stop().animate({"width":"50vh","height":"50vh","left":"0","top":"0"});
+                $(".cube_2").stop().animate({"width":"50vh","height":"50vh","left":"0","top":"0"});
             },500);
             setTimeout(function(){
                 for (i=0;i<20;i++){
@@ -39,8 +39,8 @@ $(window).on("scroll wheel", function(event){
                 $("#text_wrap").show()
             },1200);
             setTimeout(function(){
-                $("#cube").css({"animation":"spin 8s linear infinite"});
-            },2000);
+                $(".cube").css({"animation":"spin 8s linear infinite"});
+            },1900);
 
             stop_3();
         } else if (scrollCount==1){
@@ -57,11 +57,32 @@ $(window).on("scroll wheel", function(event){
         }else if(scrollCount==3){
             s=true;
             $("#project_wrap").animate({"margin-left":"0"},"slow")
-            stop_1();
+            stop_2();
         } else if(scrollCount==4){
             s=true;
             $("#project_wrap").animate({"margin-left":"-1200px"},"slow")
             stop_1();
+        } else if(scrollCount==5){
+            s=true;
+            $("#contact").css({"animation":"square_contact_back 1s linear both"});
+            $("#portfolio").css({"animation":"square_portfolio_back 1s linear both"});
+            stop_1();
+        } else if(scrollCount==6) {
+            s=true;
+            var calc= (-$(window).width()/2 + $(window).height()/4)
+            $(".cube").css({"animation":"spin_back 0.5s linear"});
+            for (i=0;i<20;i++){
+                $("#text_wrap_2 h1 span").eq(i).css({"animation":"text_drop_"+i+"_back 1s linear both"});
+            };
+            setTimeout(function(){
+                $(".cube_2").stop().animate({"width":"100vw","height":"100vh","left":calc,"top":"-25vh"});
+            },500);
+            setTimeout(function(){
+
+                $("#text_wrap_2 h1").hide();
+                $("#footer").animate({"margin-top":"100vh"});
+            },1200);
+            stop_3();
         }
 
     }else if(event.originalEvent.wheelDelta < 0 && !s){
@@ -74,11 +95,11 @@ $(window).on("scroll wheel", function(event){
                 $("#text_wrap h1 span").eq(i).css({"animation":"text_out_"+i+" 0.5s linear both"});
             }
             setTimeout(function(){
-            $("#cube").css({"animation":"spin_back 0.5s linear"});
+            $(".cube").css({"animation":"spin_back 0.5s linear"});
             },500);
             setTimeout(function(){
                 $("#text_wrap").hide()
-                $("#cube_2").stop().animate({"width":"100vw","height":"100vh","left":calc,"top":"-25vh"});
+                $(".cube_2").stop().animate({"width":"100vw","height":"100vh","left":calc,"top":"-25vh"});
             },1200);
             setTimeout(function(){
                 $("#square").animate({"margin-top":"-100vh"});
@@ -97,18 +118,32 @@ $(window).on("scroll wheel", function(event){
             stop_2();
         } else if(scrollCount==4){
             s=true;
-            $("#project_wrap").animate({"margin-left":"-1200px"},"slow")
+            $("#project_wrap").animate({"margin-left":"-1200px"},"slow");
             stop_1();
         } else if(scrollCount==5){
             s=true;
-            $("#project_wrap").animate({"margin-left":"-2400px"},"slow")
-            stop_1();
+            $("#project_wrap").animate({"margin-left":"-2400px"},"slow");
+            $("#portfolio").css({"left":0})
+            stop_2();
         } else if (scrollCount==6) {
             s=true;
             $("#portfolio").css({"animation":"square_portfolio 1s linear both"});
             $("#contact").css({"animation":"square_contact 1s linear both"});
-            setTimeout(skill(),3000);
             stop_2();
+        } else if (scrollCount==7) {
+            s=true;
+            $("#footer").animate({"margin-top":"-100vh"});
+            setTimeout(function(){
+                $(".cube_2").stop().animate({"width":"50vh","height":"50vh","left":"0","top":"0"});
+            },700);
+            setTimeout(function(){
+                $("#text_wrap_2 h1").show();
+                for (i=0;i<20;i++){
+                    $("#text_wrap_2 h1 span").eq(i).css({"animation":"text_drop_"+i+" 1s linear both"});
+                }
+                $(".cube").css({"animation":"spin 8s linear infinite"});
+            },1200);
+            stop_3();
         }
     }
 })
@@ -123,7 +158,7 @@ var skill = function (){
         } else {
             clearInterval(circle_60);
         }
-    },50);
+    },75);
     var circle_80 = setInterval(function(){
         if (i<81) {
             $("#java").css({"background":"conic-gradient(#e6a329 0% "+i+"%, #333333 "+i+"% 100%)"});
@@ -132,7 +167,7 @@ var skill = function (){
         } else {
             clearInterval(circle_80);
         }
-    },37.5);
+    },56.3);
     var circle_90 = setInterval(function(){
         if (i<91) {
             $("#html").css({"background":"conic-gradient(#ff4c1e 0% "+i+"%, #333333 "+i+"% 100%)"});
@@ -141,7 +176,7 @@ var skill = function (){
         } else {
             clearInterval(circle_90);
         }
-    },33.3);
+    },50);
 }
 
 $(document).ready(function(){
