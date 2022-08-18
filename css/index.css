@@ -4,6 +4,24 @@ html, body {
   overflow: hidden;
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
+  cursor: none;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-animation: cursor-spin 2s linear infinite;
+          animation: cursor-spin 2s linear infinite;
+  position: absolute;
+  border: 1px solid rgb(51, 51, 51);
+  z-index: 1000;
+}
+.cursor .inner_cursor {
+  margin: 4px;
+  width: 10px;
+  height: 10px;
+  background: white;
 }
 
 .fullpage {
@@ -18,8 +36,7 @@ html, body {
   height: 100%;
   position: relative;
 }
-
-#scroll_spin {
+#page_wrap #scroll_spin {
   width: 100px;
   height: 100px;
   position: fixed;
@@ -30,12 +47,11 @@ html, body {
           animation: scroll_spin 15s both linear infinite;
   background: url(../img/spin_white.svg) center/cover no-repeat;
 }
-
-#main #cube_wrap {
+#page_wrap #main #cube_wrap {
   width: 100%;
   height: 100vh;
 }
-#main #cube_wrap .cube {
+#page_wrap #main #cube_wrap .cube {
   position: relative;
   height: 50vh;
   width: 50vh;
@@ -45,46 +61,46 @@ html, body {
           animation: spin 8s infinite linear;
   transform-style: preserve-3d;
 }
-#main #cube_wrap .cube .cube_face {
+#page_wrap #main #cube_wrap .cube .cube_face {
   position: absolute;
   height: 100%;
   width: 100%;
 }
-#main #cube_wrap .cube .cube_1 {
+#page_wrap #main #cube_wrap .cube .cube_1 {
   transform: rotateX(90deg) translateZ(25vh);
   background: #ffffff;
 }
-#main #cube_wrap .cube .cube_2 {
+#page_wrap #main #cube_wrap .cube .cube_2 {
   transform: translateZ(25vh);
   background: #fdfdfd;
 }
-#main #cube_wrap .cube .cube_3 {
+#page_wrap #main #cube_wrap .cube .cube_3 {
   transform: rotateY(90deg) translateZ(25vh);
   background: #f4f4f4;
 }
-#main #cube_wrap .cube .cube_4 {
+#page_wrap #main #cube_wrap .cube .cube_4 {
   transform: rotateY(180deg) translateZ(25vh);
   background: #f7f7f7;
 }
-#main #cube_wrap .cube .cube_5 {
+#page_wrap #main #cube_wrap .cube .cube_5 {
   transform: rotateY(-90deg) translateZ(25vh);
   background: #ededed;
 }
-#main #cube_wrap .cube .cube_6 {
+#page_wrap #main #cube_wrap .cube .cube_6 {
   transform: rotateX(-90deg) translateZ(25vh);
   background: #e7e7e7;
 }
-#main #cube_wrap #text_wrap {
+#page_wrap #main #cube_wrap #text_wrap {
   position: relative;
 }
-#main #cube_wrap #text_wrap h1 {
+#page_wrap #main #cube_wrap #text_wrap h1 {
   margin-top: -25vh;
   color: white;
   text-align: center;
   font-size: 10em;
   text-shadow: -1px 0 rgb(51, 51, 51), 0 1px rgb(51, 51, 51), 1px 0 rgb(51, 51, 51), 0 -1px rgb(51, 51, 51);
 }
-#main #cube_wrap #text_wrap h1 span {
+#page_wrap #main #cube_wrap #text_wrap h1 span {
   position: relative;
   display: inline-block;
 }
@@ -102,8 +118,7 @@ html, body {
   float: left;
   position: absolute;
 }
-
-#introduce {
+#square #introduce {
   width: 100vw;
   height: auto;
   transform-style: preserve-3d;
@@ -112,7 +127,7 @@ html, body {
   display: flex;
   justify-content: center;
 }
-#introduce .container {
+#square #introduce .container {
   width: 1200px;
   position: absolute;
   height: 100vh;
@@ -122,14 +137,14 @@ html, body {
   flex-wrap: wrap;
   align-content: space-between;
 }
-#introduce .container #pic_outer {
+#square #introduce .container #pic_outer {
   width: 300px;
   height: 45vh;
   background: rgb(51, 51, 51);
   position: relative;
   overflow: hidden;
 }
-#introduce .container #pic_outer::before {
+#square #introduce .container #pic_outer::before {
   content: "";
   width: 7px;
   height: 4.5vh;
@@ -138,18 +153,19 @@ html, body {
   transform: skew(-45deg);
   margin-left: 7px;
 }
-#introduce .container #pic_outer::after {
+#square #introduce .container #pic_outer::after {
   content: "";
   width: 7px;
   height: 4.5vh;
   background: white;
   display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
   position: absolute;
   bottom: 0;
-  transform: skew(-45deg);
   margin-left: 272px;
 }
-#introduce .container #pic_outer #pic {
+#square #introduce .container #pic_outer #pic {
   width: 300px;
   position: absolute;
   top: 0;
@@ -158,7 +174,7 @@ html, body {
   -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
           clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
 }
-#introduce .container #about_outer {
+#square #introduce .container #about_outer {
   margin-left: 100px;
   width: 700px;
   height: 45vh;
@@ -166,27 +182,28 @@ html, body {
   position: relative;
   overflow: hidden;
 }
-#introduce .container #about_outer::before {
+#square #introduce .container #about_outer::before {
   content: "";
   width: 7px;
   height: 4.5vh;
-  background: forestgreen;
+  background: white;
   display: inline-block;
   transform: skew(-45deg);
   margin-left: 7px;
 }
-#introduce .container #about_outer::after {
+#square #introduce .container #about_outer::after {
   content: "";
   width: 7px;
   height: 4.5vh;
-  background: forestgreen;
+  background: white;
   display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
   position: absolute;
   bottom: 0;
-  transform: skew(-45deg);
   margin-left: 672px;
 }
-#introduce .container #about_outer #about {
+#square #introduce .container #about_outer #about {
   width: 700px;
   height: 45vh;
   position: absolute;
@@ -195,34 +212,35 @@ html, body {
   -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
           clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
 }
-#introduce .container #comment_outer {
+#square #introduce .container #comment_outer {
   width: 1100px;
   height: 30vh;
   background: rgb(51, 51, 51);
   position: relative;
   overflow: hidden;
 }
-#introduce .container #comment_outer::before {
+#square #introduce .container #comment_outer::before {
   content: "";
   width: 7px;
-  height: 3.3vh;
-  background: firebrick;
+  height: 4.5vh;
+  background: white;
   display: inline-block;
   transform: skew(-45deg);
   margin-left: 7px;
 }
-#introduce .container #comment_outer::after {
+#square #introduce .container #comment_outer::after {
   content: "";
   width: 7px;
-  height: 3.3vh;
-  background: firebrick;
+  height: 4.5vh;
+  background: white;
   display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
   position: absolute;
   bottom: 0;
-  transform: skew(-45deg);
   margin-left: 1072px;
 }
-#introduce .container #comment_outer #comment {
+#square #introduce .container #comment_outer #comment {
   width: 1100px;
   height: 30vh;
   position: absolute;
@@ -231,20 +249,20 @@ html, body {
   -webkit-clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
           clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
 }
-#introduce #skill {
+#square #introduce #skill {
   top: 150vh;
   transform: rotateX(-45deg);
 }
-#introduce #skill div {
+#square #introduce #skill div {
   width: 100%;
   height: 50%;
 }
-#introduce #skill div h2 {
+#square #introduce #skill div h2 {
   color: white;
   font-size: 3em;
   margin-bottom: 20px;
 }
-#introduce #skill div .circle {
+#square #introduce #skill div .circle {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -252,7 +270,7 @@ html, body {
   float: left;
   margin: 0 50px;
 }
-#introduce #skill div .circle .inner_circle {
+#square #introduce #skill div .circle .inner_circle {
   width: 150px;
   height: 150px;
   background: rgb(51, 51, 51);
@@ -262,7 +280,7 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#introduce #skill div .circle .inner_circle img {
+#square #introduce #skill div .circle .inner_circle img {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -270,13 +288,12 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-#portfolio {
+#square #portfolio {
   width: 100vw;
   height: 100vh;
   left: 100vw;
 }
-#portfolio .container {
+#square #portfolio .container {
   width: 1200px;
   height: 100vh;
   margin: 0 auto;
@@ -287,48 +304,47 @@ html, body {
   align-content: space-between;
   overflow: hidden;
 }
-#portfolio .container h2 {
+#square #portfolio .container h2 {
   width: 100%;
   height: 5vh;
   color: white;
   font-size: 3em;
   margin-bottom: 20px;
 }
-#portfolio .container #project_wrap {
+#square #portfolio .container #project_wrap {
   width: 600%;
   height: 65vh;
   overflow: hidden;
 }
-#portfolio .container #project_wrap .project {
+#square #portfolio .container #project_wrap .project {
   width: 600px;
   height: 100%;
   float: left;
 }
-#portfolio .container #project_wrap .project .img_box {
+#square #portfolio .container #project_wrap .project .img_box {
   width: 80%;
   height: 80%;
   margin: 0 auto;
-  cursor: pointer;
 }
-#portfolio .container #project_wrap .project .img_box img {
+#square #portfolio .container #project_wrap .project .img_box img {
   width: 100%;
   height: 100%;
 }
-#portfolio .container #project_wrap .project .btn_wrap {
+#square #portfolio .container #project_wrap .project .btn_wrap {
   width: 100%;
   height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#portfolio .container #project_wrap .project .btn_wrap button {
-  cursor: pointer;
+#square #portfolio .container #project_wrap .project .btn_wrap button {
+  cursor: none;
   width: 100px;
   height: 40px;
   margin: 0 10px;
   border: none;
 }
-#portfolio .container .popup {
+#square #portfolio .container .popup {
   display: none;
   position: absolute;
   top: 0;
@@ -336,8 +352,7 @@ html, body {
   height: 100vh;
   background-color: rgba(51, 51, 51, 0.9);
 }
-#portfolio .container .popup .view_box {
-  cursor: pointer;
+#square #portfolio .container .popup .view_box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -346,27 +361,25 @@ html, body {
   height: 90%;
   overflow: hidden;
 }
-#portfolio .container .popup .view_box .view {
+#square #portfolio .container .popup .view_box .view {
   width: 100%;
 }
-#portfolio .container .popup .close {
+#square #portfolio .container .popup .close {
   margin-left: 10px;
   position: absolute;
   top: 5%;
   left: 75%;
-  cursor: pointer;
 }
-#portfolio .container .popup .close i {
+#square #portfolio .container .popup .close i {
   color: white;
   font-size: 2em;
 }
-
-#contact {
+#square #contact {
   width: 100vw;
   height: 100vh;
   top: 150vh;
 }
-#contact .container {
+#square #contact .container {
   width: 1200px;
   height: 100vh;
   margin: 0 auto;
@@ -439,6 +452,44 @@ html, body {
   top: -100vh;
 }
 
+.hover {
+  -webkit-animation: cursor_hover 2s linear infinite;
+          animation: cursor_hover 2s linear infinite;
+}
+
+@-webkit-keyframes cursor_hover {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+@keyframes cursor_hover {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+@-webkit-keyframes cursor-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes cursor-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @-webkit-keyframes text_drop_0 {
   0% {
     top: -100vh;
@@ -450,7 +501,6 @@ html, body {
     top: 0;
   }
 }
-
 @keyframes text_drop_0 {
   0% {
     top: -100vh;
@@ -1687,4 +1737,4 @@ html, body {
   to {
     transform: translate(0px, 0px);
   }
-}
+}/*# sourceMappingURL=index.css.map */

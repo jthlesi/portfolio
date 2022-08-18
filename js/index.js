@@ -207,3 +207,16 @@ $(document).ready(function(){
 
     })
 })
+
+$(window).on("mousemove", function(event){
+    $(".cursor").css({
+        top:event.pageY + "px",
+        left:event.pageX + "px"
+    })
+})
+$(".img_box, .btn_wrap>button, .view_box, .close").hover(function(){
+    $(".cursor").addClass("hover")
+},function(){
+    $(".cursor").removeClass("hover")
+
+})
