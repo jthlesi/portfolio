@@ -227,6 +227,7 @@ html, body {
   display: inline-block;
   transform: skew(-45deg);
   margin-left: 7px;
+  height: 3.3vh;
 }
 #square #introduce .container #comment_outer::after {
   content: "";
@@ -236,6 +237,7 @@ html, body {
   display: inline-block;
   transform: skew(-45deg);
   margin-left: 7px;
+  height: 3.3vh;
   position: absolute;
   bottom: 0;
   margin-left: 1072px;
@@ -246,8 +248,8 @@ html, body {
   position: absolute;
   top: 0;
   background: firebrick;
-  -webkit-clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
-          clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
+  -webkit-clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
+          clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
 }
 #square #introduce #skill {
   top: 150vh;
@@ -1737,4 +1739,4 @@ html, body {
   to {
     transform: translate(0px, 0px);
   }
-}/*# sourceMappingURL=index.css.map */
+}

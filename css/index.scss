@@ -246,10 +246,12 @@ html, body{
                 position: relative;
                 overflow: hidden;
                 &::before {
-                    @include bar
+                    @include bar;
+                    height: 3.3vh;
                 }
                 &::after {
                     @include bar;
+                    height: 3.3vh;
                     position: absolute;
                     bottom: 0;
                     margin-left: 1072px;
@@ -260,7 +262,7 @@ html, body{
                     position: absolute;
                     top:0;
                     background: firebrick;            
-                    clip-path: polygon(4.2vh 0%, 100% 0%, 100% 25.8vh, calc(1100px - 4.2vh) 100%, 0% 100%, 0% 4.2vh);
+                    clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
                 }
                 
             }
