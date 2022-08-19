@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @mixin bar {
     content: "";
     width: 7px;
@@ -51,6 +53,13 @@
     }
 }
 
+@mixin center {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 $back :rgb(51, 51, 51);
 
 html, body{
@@ -58,7 +67,6 @@ html, body{
     height: 100%;
     overflow: hidden;
     overscroll-behavior: contain;
-    cursor: none;
 }
 
 .cursor{
@@ -66,9 +74,10 @@ html, body{
     height: 20px;
     background: rgba(255,255,255,0.5);
     animation: cursor-spin 2s linear infinite;
-    position: absolute;
+    @include center;
     border: 1px solid $back;
     z-index: 1000;
+    pointer-events: none;
     .inner_cursor{
         margin:4px ;
         width: 10px;
@@ -82,6 +91,17 @@ html, body{
     height: 100%;
     position: relative;
     background: $back;
+}
+
+.container {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 10vh 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 
 #page_wrap{
@@ -144,7 +164,6 @@ html, body{
             }
             #text_wrap{
                 position: relative;
-    
                 h1 {
                     margin-top: -25vh;
                     color: white;
@@ -182,14 +201,7 @@ html, body{
         display: flex;
         justify-content: center;
         .container {
-            width: 1200px;
             position: absolute;
-            height: 100vh;
-            padding: 10vh 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-content: space-between;
             #pic_outer {
                 width: 300px;
                 height: 45vh;
@@ -264,7 +276,6 @@ html, body{
                     background: firebrick;            
                     clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
                 }
-                
             }
         }
         #skill {
@@ -290,17 +301,11 @@ html, body{
                         height: 150px;
                         background: $back;
                         border-radius: 50%;
-                        position: absolute;
-                        top:50%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
+                        @include center;
                         img {
                             width: 80%;
                             height: 80%;
-                            position: absolute;
-                            top:50%;
-                            left: 50%;
-                            transform: translate(-50%,-50%);
+                            @include center;
                         }
                     }
                 }
@@ -312,15 +317,8 @@ html, body{
         height: 100vh;
         left: 100vw;
         .container {
-            width: 1200px;
-            height: 100vh;
-            margin: 0 auto;
-            padding: 10vh 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-content: space-between;
             overflow: hidden;
+            margin: 0 auto;
             h2 {
                 width: 100%;
                 height: 5vh;
@@ -369,10 +367,7 @@ html, body{
                 height: 100vh;
                 background-color: rgba(51,51,51,0.9);
                 .view_box{
-                    position: absolute;
-                    top:50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
+                    @include center;
                     width: 50%;
                     height: 90%;
                     overflow: hidden;
@@ -398,15 +393,6 @@ html, body{
         height: 100vh;
         top: 150vh;
         .container {
-            width: 1200px;
-            height: 100vh;
-            margin: 0 auto;
-            padding: 10vh 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-content: space-between;
-            overflow: hidden;
             background: khaki;
         }
     }
@@ -418,7 +404,6 @@ html, body{
         @include cube;
         #text_wrap_2{
             position: relative;
-
             h1 {
                 display: none;
                 margin: -15vh auto;
@@ -426,51 +411,22 @@ html, body{
                 text-align: center;
                 font-size: 11em;
                 text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
-                // #text_overay {
-                //     display: none;
-                //     position: fixed;
-                //     left: 50%;
-                //     transform: translate(-50%);
-                    // &::before {
-                    //     content: "THANK YOU";
-                    //     position: absolute;
-                    //     width: 100%;
-                    //     height: 10%;
-                    //     left: 0;
-                    //     overflow: hidden;
-                    //     color: white;
-                    //     animation: text_down 2s linear both;
-
-                    //     text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
-                    // }
-
-                    span{
-
-                        position: relative;
-                        display: inline-block;
-                        top:-100vh;
-                    }
-                
+                span{
+                    position: relative;
+                    display: inline-block;
+                    top:-100vh;
+                }
             }
-
         }
     }
 }
 
-
+//커서 효과
 .hover {
     animation: cursor_hover 2s linear infinite;
 }
 
-@keyframes cursor_hover {
-    0%{
-        transform: rotate(0deg)scale(1);
-    }
-    100%{
-        transform: rotate(360deg)scale(2);
-    }
-}
-
+// 커서 애니메이션
 @keyframes cursor-spin {
     0%{
         transform: rotate(0deg);
@@ -480,263 +436,34 @@ html, body{
     }
 }
 
-@keyframes text_drop_0 {
+@keyframes cursor_hover {
     0%{
-        top:-100vh;
+        transform: rotate(0deg) scale(1);
     }
-    70% {
-        top:20vh;
-    }
-    100% {
-        top:0;
+    100%{
+        transform: rotate(360deg) scale(1.5);
     }
 }
 
-@keyframes text_drop_0_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-20vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_1 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:15vh;
-    }
-    100% {
-        top:0;
-    }
-}
-
-@keyframes text_drop_1_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-25vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_2 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:7vh;
-    }
-    100% {
-        top:0;
-    }
-}
-
-@keyframes text_drop_2_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-30vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-@keyframes text_drop_3 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:22vh;
-    }
-    100% {
-        top:0;
-    }
-}
-
-@keyframes text_drop_3_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-15vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_4 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:14vh;
-    }
-    100% {
-        top:0;
-    }
-}
-
-@keyframes text_drop_4_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-11vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_6 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:9vh;
-    }
-    100% {
-        top:0;
-    }
-}
-@keyframes text_drop_6_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-7vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_7 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:12vh;
-    }
-    100% {
-        top:0;
-    }
-}
-@keyframes text_drop_7_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-22vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-
-@keyframes text_drop_8 {
-    0%{
-        top:-100vh;
-    }
-    70% {
-        top:17vh;
-    }
-    100% {
-        top:0;
-    }
-}
-
-@keyframes text_drop_8_back {
-    0%{
-        top:0;
-    }
-    30% {
-        top:-16vh;
-    }
-    100% {
-        top:100vh;
-    }
-}
-// @keyframes text_down {
-//     from {
-//         height: 0%;
-//     }
-//     to {
-//         height: 100%;
-//     }
-// }
-
-
-@keyframes up {
+@keyframes square_intro {
     from {
-        top: 0;
+        left:0;
+        transform: rotateY(0deg);
     }
     to {
-        top: -100%;
+        left: -100vw;
+        transform: rotateY(-45deg);
     }
 }
 
-@keyframes down {
+@keyframes square_intro_back {
     from {
-        top: 0;
+        left: -100vw;
+        transform: rotateY(-45deg);
     }
     to {
-        top: 100%;
-    }
-}
-
-@keyframes square_contact {
-    from {
-        top:150vh;
-        transform: rotateX(-45deg);
-    }
-    to {
-        top: 0;
-        transform: rotateX(0deg);
-    }
-}
-
-@keyframes square_contact_back {
-    from {
-        top: 0;
-        transform: rotateX(0deg);
-    }
-    to {
-        top:150vh;
-        transform: rotateX(-45deg);
-    }
-}
-
-@keyframes square_portfolio{
-    from {
-        top:0;
-        transform: rotateX(0deg);
-    }
-    to {
-        top: -150vh;
-        transform: rotateX(45deg);
-    }
-}
-
-@keyframes square_portfolio_back {
-    from {
-        top: -150vh;
-        transform: rotateX(45deg);
-    }
-    to {
-        top:0;
-        transform: rotateX(0deg);
+        left:0;
+        transform: rotateY(0deg);
     }
 }
 
@@ -784,28 +511,6 @@ html, body{
     }
 }
 
-@keyframes square_intro {
-    from {
-        left:0;
-        transform: rotateY(0deg);
-    }
-    to {
-        left: -100vw;
-        transform: rotateY(-45deg);
-    }
-}
-
-@keyframes square_intro_back {
-    from {
-        left: -100vw;
-        transform: rotateY(-45deg);
-    }
-    to {
-        left:0;
-        transform: rotateY(0deg);
-    }
-}
-
 @keyframes square_port {
     from {
         left:100vw;
@@ -828,6 +533,51 @@ html, body{
     }
 }
 
+@keyframes square_portfolio{
+    from {
+        top:0;
+        transform: rotateX(0deg);
+    }
+    to {
+        top: -150vh;
+        transform: rotateX(45deg);
+    }
+}
+
+@keyframes square_portfolio_back {
+    from {
+        top: -150vh;
+        transform: rotateX(45deg);
+    }
+    to {
+        top:0;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes square_contact {
+    from {
+        top:150vh;
+        transform: rotateX(-45deg);
+    }
+    to {
+        top: 0;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes square_contact_back {
+    from {
+        top: 0;
+        transform: rotateX(0deg);
+    }
+    to {
+        top:150vh;
+        transform: rotateX(-45deg);
+    }
+}
+
+// 스크롤 안내
 @keyframes scroll_spin {
     from {
         transform: rotate(0deg);
@@ -837,6 +587,7 @@ html, body{
     }
 }
 
+// 큐브 회전
 @keyframes spin {
     from { 
         transform: rotateY(0) rotateX(0); 
@@ -855,6 +606,7 @@ html, body{
     }
 }
 
+// 메인 텍스트
 @keyframes text_out_0 {
     from {
         transform: translate(0px, 0px);
@@ -867,7 +619,6 @@ html, body{
 @keyframes text_out_0_back {
     from {
         transform: translate(-30vw, -5vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -886,7 +637,6 @@ html, body{
 @keyframes text_out_1_back {
     from {
         transform: translate(-40vw, -20vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -905,7 +655,6 @@ html, body{
 @keyframes text_out_2_back {
     from {
         transform: translate(-50vw, -40vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -924,7 +673,6 @@ html, body{
 @keyframes text_out_3_back {
     from {
         transform: translate(-60vw, -80vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -943,7 +691,6 @@ html, body{
 @keyframes text_out_5_back {
     from {
         transform: translate(0vw, -70vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -962,7 +709,6 @@ html, body{
 @keyframes text_out_6_back {
     from {
         transform: translate(10vw, -70vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -981,7 +727,6 @@ html, body{
 @keyframes text_out_7_back {
     from {
         transform: translate(25vw, -60vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -1000,7 +745,6 @@ html, body{
 @keyframes text_out_9_back {
     from {
         transform: translate(45vw, -30vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -1019,7 +763,6 @@ html, body{
 @keyframes text_out_10_back {
     from {
         transform: translate(60vw, -30vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -1038,7 +781,6 @@ html, body{
 @keyframes text_out_11_back {
     from {
         transform: translate(-30vw, 10vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -1057,7 +799,6 @@ html, body{
 @keyframes text_out_12_back {
     from {
         transform: translate(-40vw, 50vh);
-
     }
     to {
         transform: translate(0px, 0px);
@@ -1187,5 +928,198 @@ html, body{
     }
     to {
         transform: translate(0px, 0px);
+    }
+}
+
+// footer 텍스트
+@keyframes text_drop_0 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:20vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_0_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-20vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_1 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:15vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_1_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-25vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_2 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:7vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_2_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-30vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_3 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:22vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_3_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-15vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_4 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:14vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_4_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-11vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_6 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:9vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_6_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-7vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_7 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:12vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_7_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-22vh;
+    }
+    100% {
+        top:100vh;
+    }
+}
+
+@keyframes text_drop_8 {
+    0%{
+        top:-100vh;
+    }
+    70% {
+        top:17vh;
+    }
+    100% {
+        top:0;
+    }
+}
+
+@keyframes text_drop_8_back {
+    0%{
+        top:0;
+    }
+    30% {
+        top:-16vh;
+    }
+    100% {
+        top:100vh;
     }
 }
