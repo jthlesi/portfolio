@@ -4,6 +4,7 @@ html, body {
   overflow: hidden;
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
+  cursor: none;
 }
 
 .cursor {
@@ -319,27 +320,56 @@ html, body {
   overflow: hidden;
 }
 #square #portfolio .container #project_wrap .project {
-  width: 600px;
+  width: 1200px;
   height: 100%;
   float: left;
+  display: flex;
+  flex-wrap: wrap;
 }
 #square #portfolio .container #project_wrap .project .img_box {
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#square #portfolio .container #project_wrap .project .img_box .more_btn {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+}
+#square #portfolio .container #project_wrap .project .img_box .more_btn p {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 1px solid white;
+  width: 200px;
+  height: 50px;
 }
 #square #portfolio .container #project_wrap .project .img_box img {
   width: 100%;
+}
+#square #portfolio .container #project_wrap .project .right_box {
+  width: 50%;
   height: 100%;
 }
-#square #portfolio .container #project_wrap .project .btn_wrap {
+#square #portfolio .container #project_wrap .project .right_box .descript_wrap {
   width: 100%;
-  height: 20%;
+  height: 70%;
+  background: gold;
+}
+#square #portfolio .container #project_wrap .project .right_box .btn_wrap {
+  width: 100%;
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#square #portfolio .container #project_wrap .project .btn_wrap button {
+#square #portfolio .container #project_wrap .project .right_box .btn_wrap button {
   cursor: none;
   width: 100px;
   height: 40px;
@@ -448,6 +478,10 @@ html, body {
 .hover {
   -webkit-animation: cursor_hover 2s linear infinite;
           animation: cursor_hover 2s linear infinite;
+}
+
+.img_hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 @-webkit-keyframes cursor-spin {
