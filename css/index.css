@@ -334,21 +334,26 @@ html, body {
 }
 #square #portfolio .container #project_wrap .project .img_box .more_btn {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: none;
   position: absolute;
   top: 0;
 }
 #square #portfolio .container #project_wrap .project .img_box .more_btn p {
   position: absolute;
-  position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
   color: white;
   border: 1px solid white;
   width: 200px;
   height: 50px;
+}
+#square #portfolio .container #project_wrap .project .img_box .more_down {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
 }
 #square #portfolio .container #project_wrap .project .img_box img {
   width: 100%;

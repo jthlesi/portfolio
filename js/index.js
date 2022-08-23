@@ -276,7 +276,7 @@ $(".img_box, .btn_wrap>button, .view_box, .close").mouseover(function(){
 })
 
 $(".img_box").hover(function(){
-    $(".more_btn",this).addClass("img_hover");
+    $(".more_btn, .more_down",this).addClass("img_hover");
     $(".more_btn").show();
 }, function(){
     $(".more_btn",this).removeClass("img_hover");
