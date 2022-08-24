@@ -342,28 +342,33 @@ html, body{
                         height: 100%;
                         overflow: hidden;
                         position: relative;
-                        .more_btn {
+                        .more_wrap {
                             width: 100%;
-                            height: 50%;
+                            height: 100%;
                             display: none;
                             position: absolute;
-                            top:0;
-                            p { 
+                            .more_up {
+                                width: 100%;
+                                height: 50%;
                                 position: absolute;
-                                bottom:0;
-                                left: 50%;
-                                transform: translate(-50%, 50%);
+                                top:-50%;
+                            }
+                            .more_down {
+                                width: 100%;
+                                height: 50%;
+                                position: absolute;
+                                top:100%;
+                            }
+                            .more_btn { 
                                 color: white;
                                 border: 1px solid white;
                                 width: 200px;
                                 height: 50px;
+                                @include center;
+                                p {
+                                    @include center;
+                                }
                             }
-                        }
-                        .more_down {
-                            width: 100%;
-                            height: 50%;
-                            position: absolute;
-                            top:50%;
                         }
                         img {
                             width: 100%;
@@ -403,7 +408,7 @@ html, body{
                 background-color: rgba(51,51,51,0.9);
                 .view_box{
                     @include center;
-                    width: 50%;
+                    width: 60%;
                     height: 90%;
                     overflow: hidden;
                     .view {
@@ -414,7 +419,7 @@ html, body{
                     margin-left: 10px;
                     position: absolute;
                     top:5%;
-                    left:75%;
+                    left:80%;
                     i {
                         color: white;
                         font-size: 2em;

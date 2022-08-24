@@ -57,35 +57,45 @@ $(window).on("scroll wheel", function(event){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"0"},"slow", function(){
-                $(".project_img").delay(500).eq(0).stop(true,true).animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000);
+                $(".project_img").delay(500).eq(0).stop(true,true).animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_2();
         } else if(scrollCount==4){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-1200px"},"slow", function(){
-                $(".project_img").delay(500).eq(1).stop(true,true).animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000);
+                $(".project_img").delay(500).eq(1).stop(true,true).animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==5){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-2400px"},"slow", function(){
-                $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000);
+                $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==6){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-3600px"},"slow", function(){
-                $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000);
+                $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==7){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-4800px"},"slow", function(){
-                $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000);
+                $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==8){
@@ -142,42 +152,54 @@ $(window).on("scroll wheel", function(event){
             $("#portfolio").css({"animation":"square_port 1s linear both"});
             $(".project_img").stop(true,true).css({"margin-top":0});
             setTimeout(function(){
-                $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000);
+                $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                });
             },1000)
             stop_2();
         } else if(scrollCount==4){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-1200px"},"slow", function(){
-                $(".project_img").delay(500).eq(1).stop().animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000);
+                $(".project_img").delay(500).eq(1).stop().animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==5){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-2400px"},"slow", function(){
-                $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000);
+                $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==6){
             s=true;
             $(".project_img").stop(true,true).clearQueue();
             $("#project_wrap").stop().animate({"margin-left":"-3600px"},"slow", function(){
-                $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000);
+                $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         } else if(scrollCount==7){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-4800px"},"slow", function(){
-                $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000);
+                $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             stop_1();
         }  else if(scrollCount==8){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-6000px"},"slow", function(){
-                $(".project_img").delay(500).eq(5).stop().animate({"margin-top": $(".img_box").eq(5).height()-$(".project_img").eq(5).height()},5000);
+                $(".project_img").delay(500).eq(5).stop().animate({"margin-top": $(".img_box").eq(5).height()-$(".project_img").eq(5).height()},5000,function(){
+                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+            });
             });
             $("#portfolio").css({"left":0});
             stop_2();
@@ -241,9 +263,15 @@ $(document).ready(function(){
         $(".img_box").eq(i).children("img").attr("src","img/project_"+(i+1)+"_main.png");    
     }
     $(".btn_wrap button").on("click", function(){
-        var btn_idx = $(this).parent().parent().index();
+        var btn_idx = $(this).parent().parent().parent().index();
         var btn_class = $(this).attr("class");
         $(".img_box").eq(btn_idx).children("img").attr("src","img/project_"+(btn_idx+1)+"_"+btn_class+".png");
+        $(".project_img").stop(true,true).css({"margin-top":0});
+        setTimeout(function(){
+            $(".project_img").stop().animate({"margin-top": $(".img_box").eq(btn_idx).height()-$(".project_img").eq(btn_idx).height()},5000,function(){
+                $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+        });
+        },500)
     })
     $(".img_box").on("click", function(){
         var idx = $(".img_box").index(this);
@@ -253,7 +281,7 @@ $(document).ready(function(){
         $(".view_box").hover(function(){
             $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000);
         },function(){
-            $(".view").stop().animate({"margin-top":0},5000);
+            $(".view").stop().animate({"margin-top":0},4000);
         });
         $("#scroll_spin").hide();
     })
@@ -263,22 +291,27 @@ $(document).ready(function(){
         $(".popup").hide();
         $("#scroll_spin").show();
     })
+    $(".img_box").hover(function(){
+        $(".more_up, .more_down",this).addClass("img_hover");
+        $(".more_wrap").show();
+        $(".more_up").stop().animate({"top":"0%"},"fast","linear");
+        $(".more_down").stop().animate({"top":"50%"},"fast","linear");
+    }, function(){
+        $(".more_up, .more_down",this).removeClass("img_hover");
+        $(".more_up").stop().animate({"top":"-50%"},"fast","linear");
+        $(".more_down").stop().animate({"top":"100%"},"fast","linear");
+        $(".more_wrap").hide();
+    })
+    $(".img_box, .btn_wrap>button, .view_box, .close").mouseover(function(){
+        $(".cursor").addClass("hover");
+    }).mouseout(function(){
+        $(".cursor").removeClass("hover");
+    })
 })
 
 $(window).on("mousemove", function(event){
     $(".cursor").css({top:event.pageY + "px",left:event.pageX + "px"});
 })
 
-$(".img_box, .btn_wrap>button, .view_box, .close").mouseover(function(){
-    $(".cursor").addClass("hover");
-}).mouseout(function(){
-    $(".cursor").removeClass("hover");
-})
 
-$(".img_box").hover(function(){
-    $(".more_btn, .more_down",this).addClass("img_hover");
-    $(".more_btn").show();
-}, function(){
-    $(".more_btn",this).removeClass("img_hover");
-    $(".more_btn").hide();
-})
+
