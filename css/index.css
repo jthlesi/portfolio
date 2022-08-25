@@ -262,25 +262,24 @@ html, body {
 #square #introduce #skill {
   top: 150vh;
   transform: rotateX(-45deg);
+  display: flex;
 }
-#square #introduce #skill div {
-  width: 100%;
-  height: 50%;
+#square #introduce #skill #circle_wrap {
+  width: 60%;
+  height: 100%;
+  position: relative;
 }
-#square #introduce #skill div h2 {
-  color: white;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-#square #introduce #skill div .circle {
+#square #introduce #skill #circle_wrap .circle {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  position: relative;
-  float: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
   margin: 0 50px;
 }
-#square #introduce #skill div .circle .inner_circle {
+#square #introduce #skill #circle_wrap .circle .inner_circle {
   width: 150px;
   height: 150px;
   background: rgb(51, 51, 51);
@@ -290,13 +289,34 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#square #introduce #skill div .circle .inner_circle img {
+#square #introduce #skill #circle_wrap .circle .inner_circle img {
   width: 80%;
   height: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#square #introduce #skill #skill_text_wrap {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  color: white;
+}
+#square #introduce #skill #skill_text_wrap #skill_title {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#square #introduce #skill #skill_text_wrap #skill_title span {
+  font-size: 4em;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+#square #introduce #skill #skill_text_wrap #skill_text {
+  width: 80%;
+  height: 100%;
 }
 #square #portfolio {
   width: 100vw;

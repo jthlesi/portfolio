@@ -58,7 +58,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"0"},"slow", function(){
                 $(".project_img").delay(500).eq(0).stop(true,true).animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_2();
@@ -67,7 +67,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-1200px"},"slow", function(){
                 $(".project_img").delay(500).eq(1).stop(true,true).animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -76,7 +76,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-2400px"},"slow", function(){
                 $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -85,7 +85,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-3600px"},"slow", function(){
                 $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -94,7 +94,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").animate({"margin-left":"-4800px"},"slow", function(){
                 $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -153,7 +153,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             setTimeout(function(){
                 $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
                 });
             },1000)
             stop_2();
@@ -162,7 +162,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-1200px"},"slow", function(){
                 $(".project_img").delay(500).eq(1).stop().animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -171,7 +171,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-2400px"},"slow", function(){
                 $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -180,7 +180,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).clearQueue();
             $("#project_wrap").stop().animate({"margin-left":"-3600px"},"slow", function(){
                 $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -189,7 +189,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-4800px"},"slow", function(){
                 $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             stop_1();
@@ -198,7 +198,7 @@ $(window).on("scroll wheel", function(event){
             $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_wrap").stop().animate({"margin-left":"-6000px"},"slow", function(){
                 $(".project_img").delay(500).eq(5).stop().animate({"margin-top": $(".img_box").eq(5).height()-$(".project_img").eq(5).height()},5000,function(){
-                    $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
+                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
             });
             });
             $("#portfolio").css({"left":0});
@@ -269,8 +269,8 @@ $(document).ready(function(){
         $(".project_img").stop(true,true).css({"margin-top":0});
         setTimeout(function(){
             $(".project_img").stop().animate({"margin-top": $(".img_box").eq(btn_idx).height()-$(".project_img").eq(btn_idx).height()},5000,function(){
-                $(".project_img").delay(6000).stop(true,true).css({"margin-top":0});
-        });
+                $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            });
         },500)
     })
     $(".img_box").on("click", function(){
