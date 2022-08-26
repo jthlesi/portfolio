@@ -13,7 +13,7 @@ html, body {
   background: rgba(255, 255, 255, 0.5);
   -webkit-animation: cursor-spin 2s linear infinite;
           animation: cursor-spin 2s linear infinite;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -50,6 +50,7 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
+  margin-top: -20px;
 }
 #page_wrap #scroll_spin {
   width: 100px;
@@ -265,26 +266,29 @@ html, body {
   display: flex;
 }
 #square #introduce #skill #circle_wrap {
-  width: 60%;
+  width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
 }
 #square #introduce #skill #circle_wrap .circle {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(2);
-  margin: 0 50px;
+  transform: translate(-50%, -50%);
+}
+#square #introduce #skill #circle_wrap .circle:not(:first-child) {
+  display: none;
 }
 #square #introduce #skill #circle_wrap .circle .inner_circle {
-  width: 150px;
-  height: 150px;
+  width: 450px;
+  height: 450px;
   background: rgb(51, 51, 51);
   border-radius: 50%;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -292,27 +296,54 @@ html, body {
 #square #introduce #skill #circle_wrap .circle .inner_circle img {
   width: 80%;
   height: 80%;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#square #introduce #skill #circle_wrap #skill_title {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#square #introduce #skill #circle_wrap #skill_title span {
+  display: none;
+  height: 80px;
+  font-size: 80px;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+#square #introduce #skill #circle_wrap #skill_title span:nth-of-type(1) {
+  width: 66px;
+}
+#square #introduce #skill #circle_wrap #skill_title span:nth-of-type(2) {
+  width: 57px;
+}
+#square #introduce #skill #circle_wrap #skill_title span:nth-of-type(3) {
+  width: 75px;
+}
+#square #introduce #skill #circle_wrap #skill_title span:nth-of-type(4) {
+  width: 53px;
+}
+#square #introduce #skill #circle_wrap #skill_title #title_2 {
+  display: none;
+  font-size: 5em;
+  font-weight: 900;
+  color: white;
+  transform: translate(-283px, 206px);
 }
 #square #introduce #skill #skill_text_wrap {
   width: 40%;
   height: 100%;
   display: flex;
   color: white;
-}
-#square #introduce #skill #skill_text_wrap #skill_title {
-  width: 20%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-#square #introduce #skill #skill_text_wrap #skill_title span {
-  font-size: 4em;
-  display: inline-block;
-  transform: rotate(90deg);
+  display: none;
 }
 #square #introduce #skill #skill_text_wrap #skill_text {
   width: 80%;
@@ -375,13 +406,13 @@ html, body {
   border: 1px solid white;
   width: 200px;
   height: 50px;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 #square #portfolio .container #project_wrap .project .img_box .more_wrap .more_btn p {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -421,7 +452,7 @@ html, body {
   background-color: rgba(51, 51, 51, 0.9);
 }
 #square #portfolio .container .popup .view_box {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -551,6 +582,86 @@ html, body {
   }
   100% {
     transform: rotate(360deg) scale(1.5);
+  }
+}
+@-webkit-keyframes text_rotate {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes text_rotate {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes h {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-280px, 310px);
+  }
+}
+@keyframes h {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-280px, 310px);
+  }
+}
+@-webkit-keyframes t {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-216px, 230px);
+  }
+}
+@keyframes t {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-216px, 230px);
+  }
+}
+@-webkit-keyframes m {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-159px, 150px);
+  }
+}
+@keyframes m {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-159px, 150px);
+  }
+}
+@-webkit-keyframes l {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-84px, 70px);
+  }
+}
+@keyframes l {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-84px, 70px);
   }
 }
 @-webkit-keyframes square_intro {

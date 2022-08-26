@@ -144,7 +144,41 @@ $(window).on("scroll wheel", function(event){
             s=true;
             $("#profile").css({"animation":"square_profile 1s linear both"});
             $("#skill").css({"animation":"square_skill 1s linear both"});
-            setTimeout(skill(),3000);
+            setTimeout(function(){
+                $("#skill span").css({"animation":"text_rotate 1.5s both"});
+                $(".circle").stop().animate({"width":"450px","height":"450px"},1500);
+                $(".inner_circle").stop().animate({"width":"400px","height":"400px"},1500);
+            },1000);
+            setTimeout(function(){
+                $("#h").css({"animation":"h 1s both"});
+                $("#t").css({"animation":"t 1s both"});
+                $("#m").css({"animation":"m 1s both"});
+                $("#l").css({"animation":"l 1s both"});
+
+            },2500);
+            setTimeout(function(){
+
+                $(".circle").stop().animate({"top":"200px","left":"100px","width":"200px","height":"200px"});
+                $(".inner_circle").stop().animate({"width":"150px","height":"150px"});
+                $(".circle").css({"position":"absolute"});
+                $("#skill_title span").hide();
+                $("#title_2").show();
+            },3500);
+
+            setTimeout(function(){
+                $(".circle").eq(0).stop().animate({"top":"200px","left":"100px",});
+                $(".circle").eq(1).show().stop().animate({"top":"200px","left":"320px"});
+                $(".circle").eq(2).show().stop().animate({"top":"200px","left":"540px"});
+                $(".circle").eq(3).show().stop().animate({"top":"200px","left":"760px"});
+                $(".circle").eq(4).show().stop().animate({"top":"420px","left":"100px"});
+                $(".circle").eq(5).show().stop().animate({"top":"420px","left":"320px"});
+                $(".circle").eq(6).show().stop().animate({"top":"420px","left":"540px"});
+                $(".circle").eq(7).show().stop().animate({"top":"420px","left":"760px"});
+                $("#title_2").css({"position":"absolute"})
+                $("#title_2").animate({"font-size":"12em","left":"-440px","top":"-50px"})
+                $("#skill_text_wrap").fadeIn()
+            },4000)
+            // setTimeout(skill(),3000);
             stop_2();
         } else if(scrollCount==3){
             s=true;

@@ -54,7 +54,7 @@
 }
 
 @mixin center {
-    position: absolute;
+    position: relative;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -109,6 +109,7 @@ html, body{
     width: 100%;
     height: 100%;
     position: relative;
+    margin-top: -20px;
     #scroll_spin {
         width: 100px;
         height: 100px;
@@ -285,29 +286,28 @@ html, body{
             display: flex;
 
             #circle_wrap{
-                width: 60%;
+                width: 100%;
                 height: 100%;
-                position: relative;
                 // h2 {
                 //     color: white;
                 //     font-size: 3em;
                 //     margin-bottom: 20px;
                 // }
-
+                position: relative;
+                display: flex;
                 .circle {
-                    width: 200px;
-                    height: 200px;
+                    width: 500px;
+                    height: 500px;
                     border-radius: 50%;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) scale(2);
-                    // position: relative;
+                    @include center;
                     // float: left;
-                    margin: 0 50px;
+                    // margin: 0 50px;
+                    &:not(:first-child){
+                        display: none;
+                    }
                     .inner_circle {
-                        width: 150px;
-                        height: 150px;
+                        width: 450px;
+                        height: 450px;
                         background: $back;
                         border-radius: 50%;
                         @include center;
@@ -318,23 +318,53 @@ html, body{
                         }
                     }
                 }
+                #skill_title {
+                    top:50%;
+                    transform: translateY(-50%);
+                    position: absolute;
+                    left: 750px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    span {
+                        display: none;
+                        height: 80px;
+                        font-size: 80px;
+                        font-weight: 900;
+                        color: white;
+                        display: inline-block;
+                        transform: rotate(90deg);
+                        &:nth-of-type(1){
+                            width: 66px;
+                        }
+                        &:nth-of-type(2){
+                            width: 57px;
+                        }
+                        &:nth-of-type(3){
+                            width: 75px;
+                        }
+                        &:nth-of-type(4){
+                            width: 53px;
+                        }
+                    }
+                    #title_2 {
+                        display: none;
+                        font-size: 5em;
+                        font-weight: 900;
+                        color: white;
+                        transform: translate(-283px, 206px);
+
+                    }
+
+                }
             }
             #skill_text_wrap {
                 width: 40%;
                 height: 100%;
                 display: flex;
                 color: white;
-                #skill_title {
-                    width: 20%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    span {
-                        font-size: 4em;
-                        display: inline-block;
-                        transform: rotate(90deg);
-                    }
-                }
+                display: none;
+
                 #skill_text {
                     width: 80%;
                     height: 100%;
@@ -516,6 +546,48 @@ html, body{
     }
     100%{
         transform: rotate(360deg) scale(1.5);
+    }
+}
+
+@keyframes text_rotate {
+    0%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes h {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(-280px, 310px);
+    }
+}
+@keyframes t {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(-216px, 230px);
+    }
+}
+@keyframes m {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(-159px, 150px);
+    }
+}
+@keyframes l {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(-84px, 70px);
     }
 }
 
