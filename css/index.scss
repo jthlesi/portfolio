@@ -284,7 +284,6 @@ html, body{
             top:150vh;
             transform: rotateX(-45deg);
             display: flex;
-
             #circle_wrap{
                 width: 100%;
                 height: 100%;
@@ -357,19 +356,24 @@ html, body{
                     }
 
                 }
-            }
-            #skill_text_wrap {
-                width: 40%;
-                height: 100%;
-                display: flex;
-                color: white;
-                display: none;
-
-                #skill_text {
-                    width: 80%;
+                #skill_text_wrap {
+                    width: 25%;
                     height: 100%;
+                    color: white;
+                    position: absolute;
+                    right: 0px;
+                    padding-top: 100px;
+                    .skill_text {
+                        width: 100%;
+                        height: 100%;
+                        p {
+                            opacity: 0;
+
+                        }
+                    }
                 }
             }
+
         }
     }
     #portfolio {
@@ -588,6 +592,15 @@ html, body{
     }
     100% {
         transform: translate(-84px, 70px);
+    }
+}
+
+@keyframes text_fade {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
