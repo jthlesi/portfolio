@@ -19,6 +19,11 @@ var stop_3 = function(){
         s=false;
     },2500);
 }
+var stop_4 = function(){ 
+    setTimeout(function(){
+        s=false;
+    },5000);
+}
 
 $(window).on("scroll wheel", function(event){
     if (event.originalEvent.wheelDelta >= 0 && !s) {
@@ -44,14 +49,30 @@ $(window).on("scroll wheel", function(event){
             stop_3();
         } else if (scrollCount==1){
             s=true;
-            $("#profile").css({"animation":"square_profile_back 1s linear both"});
-            $("#skill").css({"animation":"square_skill_back 1s linear both"});
-            stop_2();
+            $(".skill_text p").hide();
+            $("#title_2").hide().css({"font-size":"5em","left":"50%"});
+            $(".circle").stop().animate({"top":"50%","left":"50%"},1000);
+            $(".circle").css({"background":"#333333"});
+            $(".circle").mouseover(function(){
+                $(".skill_text p").hide();
+            });
+            setTimeout(function(){
+                $(".circle").not(":first").hide();
+                $(".circle").stop().animate({"width":"500px","height":"500px"},500);
+                $(".inner_circle").stop().animate({"width":"450px","height":"450px"},500);
+
+            },1000)
+            setTimeout(function(){
+                $("#profile").css({"animation":"square_profile_back 1s linear both"});
+                $("#skill").css({"animation":"square_skill_back 1s linear both"});
+            },1500);
+
+            stop_3();
         } else if(scrollCount==2){
             s=true;
             $("#introduce").css({"animation":"square_intro_back 1s linear both"});
             $("#portfolio").css({"animation":"square_port_back 1s linear both"});
-            setTimeout(skill(),3000);
+            setTimeout(skill,1000);
             stop_2();
         }else if(scrollCount==3){
             s=true;
@@ -145,7 +166,7 @@ $(window).on("scroll wheel", function(event){
             $("#profile").css({"animation":"square_profile 1s linear both"});
             $("#skill").css({"animation":"square_skill 1s linear both"});
             setTimeout(function(){
-                $("#skill span").css({"animation":"text_rotate 1s both"});
+                $("#skill span").show().css({"animation":"text_rotate 1s both"});
                 $(".circle").stop().animate({"width":"450px","height":"450px"},1000);
                 $(".inner_circle").stop().animate({"width":"400px","height":"400px"},1000);
             },1000);
@@ -174,67 +195,84 @@ $(window).on("scroll wheel", function(event){
                 $("#title_2").css({"position":"absolute"});
                 $("#title_2").animate({"font-size":"10em","left":"-440px","top":"-50px"});
                 let timeSet = 100;
-                $("#skill_text_1 p").each(function() {
+                $("#skill_text_1 p").show().each(function() {
                     this.style.animation = `text_fade 1s ${(timeSet += 100)}ms forwards`
                 });
             },3500);
             setTimeout(skill,4000);
-            stop_2();
+            setTimeout(function(){
+                $(".circle").mouseover(function(){
+                    var circleIdx = $(".circle").index(this);
+                    $(".skill_text").eq(circleIdx).show().siblings().hide().children().css({"animation":"none"});
+                    let timeSet = 100;
+                    $(".skill_text").eq(circleIdx).children().show().each(function() {
+                        this.style.animation = `text_fade 1s ${(timeSet += 100)}ms forwards`
+                    });
+                    $("#title_2").html($(".circle").eq(circleIdx).attr("id").toUpperCase());
+                });
+            },4500);
+            stop_4();
         } else if(scrollCount==3){
             s=true;
             $("#introduce").css({"animation":"square_intro 1s linear both"});
             $("#portfolio").css({"animation":"square_port 1s linear both"});
             $(".project_img").stop(true,true).css({"margin-top":0});
-            setTimeout(function(){
-                $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-                });
-            },1000)
+            // setTimeout(function(){
+            //     $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            //     });
+            // },1000)
             stop_2();
         } else if(scrollCount==4){
             s=true;
             $(".project_img").stop(true,true).css({"margin-top":0});
-            $("#project_wrap").stop().animate({"margin-left":"-1200px"},"slow", function(){
-                $(".project_img").delay(500).eq(1).stop().animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-            });
-            });
+            $(".project").stop().animate({"width":"1100px","height":"90%","margin-top":"3.25vh","margin-left":"50px"},500,function(){
+                $("#project_wrap").delay(500).stop().animate({"margin-left":"-1200px"},500),function(){
+                    $(".project").delay(500).stop().animate({"width":"1200px","height":"100%","margin-top":"0","margin-left":"0"},500)
+                }
+
+            })
+            // $("#project_wrap").stop().animate({"margin-left":"-1200px"},"slow", function(){
+            //     $(".project_img").delay(500).eq(1).stop().animate({"margin-top": $(".img_box").eq(1).height()-$(".project_img").eq(1).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            // });
+            // });
             stop_1();
         } else if(scrollCount==5){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
-            $("#project_wrap").stop().animate({"margin-left":"-2400px"},"slow", function(){
-                $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-            });
-            });
+            // $(".project_img").stop(true,true).css({"margin-top":0});
+            // $("#project_wrap").stop().animate({"margin-left":"-2400px"},"slow", function(){
+            //     $(".project_img").delay(500).eq(2).stop().animate({"margin-top": $(".img_box").eq(2).height()-$(".project_img").eq(2).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            // });
+            // });
             stop_1();
         } else if(scrollCount==6){
             s=true;
-            $(".project_img").stop(true,true).clearQueue();
-            $("#project_wrap").stop().animate({"margin-left":"-3600px"},"slow", function(){
-                $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-            });
-            });
+            // $(".project_img").stop(true,true).clearQueue();
+            // $("#project_wrap").stop().animate({"margin-left":"-3600px"},"slow", function(){
+            //     $(".project_img").delay(500).eq(3).stop().animate({"margin-top": $(".img_box").eq(3).height()-$(".project_img").eq(3).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            // });
+            // });
             stop_1();
         } else if(scrollCount==7){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
-            $("#project_wrap").stop().animate({"margin-left":"-4800px"},"slow", function(){
-                $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-            });
-            });
+            // $(".project_img").stop(true,true).css({"margin-top":0});
+            // $("#project_wrap").stop().animate({"margin-left":"-4800px"},"slow", function(){
+            //     $(".project_img").delay(500).eq(4).stop().animate({"margin-top": $(".img_box").eq(4).height()-$(".project_img").eq(4).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            // });
+            // });
             stop_1();
         }  else if(scrollCount==8){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
-            $("#project_wrap").stop().animate({"margin-left":"-6000px"},"slow", function(){
-                $(".project_img").delay(500).eq(5).stop().animate({"margin-top": $(".img_box").eq(5).height()-$(".project_img").eq(5).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-            });
-            });
+            // $(".project_img").stop(true,true).css({"margin-top":0});
+            // $("#project_wrap").stop().animate({"margin-left":"-6000px"},"slow", function(){
+            //     $(".project_img").delay(500).eq(5).stop().animate({"margin-top": $(".img_box").eq(5).height()-$(".project_img").eq(5).height()},5000,function(){
+            //         $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
+            // });
+            // });
             $("#portfolio").css({"left":0});
             stop_2();
         } else if (scrollCount==9) {
@@ -271,7 +309,7 @@ var skill = function (){
         } else {
             clearInterval(circle_40);
         }
-    },93.7);
+    },50);
     var circle_60 = setInterval(function(){
         if(i<61){
             $("#photoshop").css({"background":"conic-gradient(#00d4ff 0% "+i+"%, #333333 "+i+"% 100%)"});
@@ -279,7 +317,7 @@ var skill = function (){
         } else {
             clearInterval(circle_60);
         }
-    },75);
+    },33.3);
     var circle_80 = setInterval(function(){
         if (i<81) {
             $("#java").css({"background":"conic-gradient(#e6a329 0% "+i+"%, #333333 "+i+"% 100%)"});
@@ -289,7 +327,7 @@ var skill = function (){
         } else {
             clearInterval(circle_80);
         }
-    },56.3);
+    },25);
     var circle_90 = setInterval(function(){
         if (i<91) {
             $("#html").css({"background":"conic-gradient(#ff4c1e 0% "+i+"%, #333333 "+i+"% 100%)"});
@@ -298,20 +336,10 @@ var skill = function (){
         } else {
             clearInterval(circle_90);
         }
-    },50);
+    },22.2);
 }
 
 $(document).ready(function(){
-    $(".circle").mouseover(function(){
-        var circleIdx = $(".circle").index(this);
-        $(".skill_text").eq(circleIdx).show().siblings().hide().children().css({"animation":"none"});
-        let timeSet = 100;
-        $(".skill_text").eq(circleIdx).children().each(function() {
-            this.style.animation = `text_fade 1s ${(timeSet += 100)}ms forwards`
-        });
-        $("#title_2").html($(".circle").eq(circleIdx).attr("id").toUpperCase())
-    })
-
     for (i=0;i<6;i++){
         $(".img_box").eq(i).children("img").attr("src","img/project_"+(i+1)+"_main.png");    
     }
