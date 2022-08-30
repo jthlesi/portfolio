@@ -36,7 +36,7 @@ html, body {
 }
 
 .container {
-  width: 1200px;
+  width: 1300px;
   height: 100vh;
   margin: 0 auto;
   padding: 10vh 0;
@@ -361,91 +361,107 @@ html, body {
 #square #portfolio .container {
   overflow: hidden;
   margin: 0 auto;
-}
-#square #portfolio .container h2 {
-  width: 100%;
-  height: 5vh;
-  color: white;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-#square #portfolio .container #project_wrap {
-  width: 600%;
-  height: 65vh;
-  overflow: hidden;
-}
-#square #portfolio .container #project_wrap .project {
-  width: 1200px;
-  height: 100%;
-  float: left;
   display: flex;
   flex-wrap: wrap;
 }
-#square #portfolio .container #project_wrap .project .img_box {
+#square #portfolio .container #project_left {
   width: 50%;
   height: 100%;
-  overflow: hidden;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
-#square #portfolio .container #project_wrap .project .img_box .more_wrap {
+#square #portfolio .container #project_left .project {
+  border: 1px solid rgb(51, 51, 51);
+  position: relative;
+  overflow: hidden;
+}
+#square #portfolio .container #project_left .project img {
   width: 100%;
-  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#square #portfolio .container #project_left .project .text_hover {
   display: none;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(51, 51, 51);
+  text-align: center;
 }
-#square #portfolio .container #project_wrap .project .img_box .more_wrap .more_up {
+#square #portfolio .container #project_left .project .text_hover p {
   width: 100%;
-  height: 50%;
-  position: absolute;
-  top: -50%;
 }
-#square #portfolio .container #project_wrap .project .img_box .more_wrap .more_down {
+#square #portfolio .container #project_left .project .text_hover .hover_btn {
+  width: 100px;
+  height: 30px;
+  border: 1px solid rgb(51, 51, 51);
+}
+#square #portfolio .container #project_left .project .text_hover .hover_btn p {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#square #portfolio .container #project_left #project {
   width: 100%;
-  height: 50%;
-  position: absolute;
-  top: 100%;
+  height: 40%;
 }
-#square #portfolio .container #project_wrap .project .img_box .more_wrap .more_btn {
+#square #portfolio .container #project_left #project p {
+  font-size: 6em;
+  font-weight: 900;
   color: white;
-  border: 1px solid white;
-  width: 200px;
-  height: 50px;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#square #portfolio .container #project_wrap .project .img_box .more_wrap .more_btn p {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#square #portfolio .container #project_left #project_1 {
+  width: 34%;
+  height: 60%;
+  background: white;
 }
-#square #portfolio .container #project_wrap .project .img_box img {
-  width: 100%;
+#square #portfolio .container #project_left #project_2 {
+  width: 33%;
+  height: 60%;
+  background: white;
 }
-#square #portfolio .container #project_wrap .project .right_box {
+#square #portfolio .container #project_left #project_3 {
+  width: 33%;
+  height: 60%;
+  background: white;
+}
+#square #portfolio .container #project_right {
   width: 50%;
   height: 100%;
-}
-#square #portfolio .container #project_wrap .project .right_box .descript_wrap {
-  width: 100%;
-  height: 70%;
-  background: gold;
-}
-#square #portfolio .container #project_wrap .project .right_box .btn_wrap {
-  width: 100%;
-  height: 30%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  background: white;
 }
-#square #portfolio .container #project_wrap .project .right_box .btn_wrap button {
-  cursor: none;
-  width: 100px;
-  height: 40px;
-  margin: 0 10px;
-  border: none;
+#square #portfolio .container #project_right .project {
+  border: 1px solid rgb(51, 51, 51);
+  overflow: hidden;
+}
+#square #portfolio .container #project_right .project img {
+  width: 100%;
+}
+#square #portfolio .container #project_right #project_4 {
+  width: 40%;
+  height: 100%;
+}
+#square #portfolio .container #project_right #project_UD {
+  width: 60%;
+  height: 100%;
+}
+#square #portfolio .container #project_right #project_UD #project_5 {
+  width: 100%;
+  height: 50%;
+}
+#square #portfolio .container #project_right #project_UD #project_6 {
+  width: 100%;
+  height: 50%;
 }
 #square #portfolio .container .popup {
   display: none;
@@ -476,6 +492,18 @@ html, body {
 #square #portfolio .container .popup .close i {
   color: white;
   font-size: 2em;
+}
+#square #portfolio .container .popup .btn_box {
+  width: 100px;
+  height: 500px;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+#square #portfolio .container .popup .btn_box .pop_btn {
+  width: 100px;
+  height: 50px;
+  background: white;
 }
 #square #contact {
   width: 100vw;
@@ -682,6 +710,100 @@ html, body {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes slide_square_next {
+  0% {
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    left: 1200px;
+  }
+  30% {
+    width: 1100px;
+    height: 90%;
+    margin-top: 3.25vh;
+    left: 1200px;
+    transform: rotateY(45deg) translateZ(25vh);
+  }
+  100% {
+    left: -1200px;
+    transform: rotateY(0deg);
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+  }
+}
+@keyframes slide_square_next {
+  0% {
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    left: 1200px;
+  }
+  30% {
+    width: 1100px;
+    height: 90%;
+    margin-top: 3.25vh;
+    left: 1200px;
+    transform: rotateY(45deg) translateZ(25vh);
+  }
+  100% {
+    left: -1200px;
+    transform: rotateY(0deg);
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+  }
+}
+@-webkit-keyframes slide_square_prev {
+  0% {
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    left: 0;
+  }
+  30% {
+    left: 0;
+    transform: rotateY(0deg);
+    width: 1100px;
+    height: 90%;
+    margin-top: 3.25vh;
+    margin-left: 50px;
+  }
+  100% {
+    left: -1200px;
+    transform: rotateY(-45deg) translateZ(25vh);
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+@keyframes slide_square_prev {
+  0% {
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    left: 0;
+  }
+  30% {
+    left: 0;
+    transform: rotateY(0deg);
+    width: 1100px;
+    height: 90%;
+    margin-top: 3.25vh;
+    margin-left: 50px;
+  }
+  100% {
+    left: -1200px;
+    transform: rotateY(-45deg) translateZ(25vh);
+    width: 1200px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 @-webkit-keyframes square_intro {
