@@ -375,13 +375,25 @@ html, body {
   color: white;
   font-size: 3em;
   font-weight: 900;
-  text-shadow: -1px 0 rgb(51, 51, 51), 0 1px rgb(51, 51, 51), 1px 0 rgb(51, 51, 51), 0 -1px rgb(51, 51, 51);
+  display: flex;
+  justify-content: space-between;
+}
+#square #portfolio .container #project_wrap #project_title p {
+  display: inline-block;
 }
 #square #portfolio .container #project_wrap #project_title #project_num {
   position: relative;
   overflow: hidden;
 }
 #square #portfolio .container #project_wrap #project_title #project_num span:not(:first-of-type) {
+  display: none;
+}
+#square #portfolio .container #project_wrap #project_title #project_desc {
+  position: relative;
+  overflow: hidden;
+  font-size: 30px;
+}
+#square #portfolio .container #project_wrap #project_title #project_desc span:not(:first-of-type) {
   display: none;
 }
 #square #portfolio .container #project_wrap #card_view {
@@ -424,18 +436,25 @@ html, body {
 #square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card img {
   width: 100%;
 }
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn {
+  display: none;
+  width: 120px;
+  height: 50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn p {
+  color: white;
+  font-size: 20px;
+}
 #square #portfolio .container #project_wrap #card_view #card_wrap #card_1 {
   margin-top: 5vh;
-}
-#square #portfolio .container #project_wrap #card_view #card_wrap #card_1::before {
-  content: "";
-  width: 7px;
-  height: 4.5vh;
-  background: white;
-  display: inline-block;
-  transform: skew(-45deg);
-  margin-left: 7px;
-  background: url(../img/project_1_main.jpg) !important;
 }
 #square #portfolio .container .popup {
   display: none;
@@ -478,6 +497,9 @@ html, body {
   width: 100px;
   height: 50px;
   background: white;
+}
+#square #portfolio .container .popup .btn_box #sub_2 {
+  display: none;
 }
 #square #contact {
   width: 100vw;
@@ -551,10 +573,6 @@ html, body {
 .hover {
   -webkit-animation: cursor_hover 2s linear infinite;
           animation: cursor_hover 2s linear infinite;
-}
-
-.img_hover {
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #card_1::before {
@@ -748,100 +766,6 @@ html, body {
   }
   100% {
     opacity: 1;
-  }
-}
-@-webkit-keyframes slide_square_next {
-  0% {
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    left: 1200px;
-  }
-  30% {
-    width: 1100px;
-    height: 90%;
-    margin-top: 3.25vh;
-    left: 1200px;
-    transform: rotateY(45deg) translateZ(25vh);
-  }
-  100% {
-    left: -1200px;
-    transform: rotateY(0deg);
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-  }
-}
-@keyframes slide_square_next {
-  0% {
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    left: 1200px;
-  }
-  30% {
-    width: 1100px;
-    height: 90%;
-    margin-top: 3.25vh;
-    left: 1200px;
-    transform: rotateY(45deg) translateZ(25vh);
-  }
-  100% {
-    left: -1200px;
-    transform: rotateY(0deg);
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-  }
-}
-@-webkit-keyframes slide_square_prev {
-  0% {
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    left: 0;
-  }
-  30% {
-    left: 0;
-    transform: rotateY(0deg);
-    width: 1100px;
-    height: 90%;
-    margin-top: 3.25vh;
-    margin-left: 50px;
-  }
-  100% {
-    left: -1200px;
-    transform: rotateY(-45deg) translateZ(25vh);
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    margin-left: 0;
-  }
-}
-@keyframes slide_square_prev {
-  0% {
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    left: 0;
-  }
-  30% {
-    left: 0;
-    transform: rotateY(0deg);
-    width: 1100px;
-    height: 90%;
-    margin-top: 3.25vh;
-    margin-left: 50px;
-  }
-  100% {
-    left: -1200px;
-    transform: rotateY(-45deg) translateZ(25vh);
-    width: 1200px;
-    height: 100%;
-    margin-top: 0;
-    margin-left: 0;
   }
 }
 @-webkit-keyframes square_intro {
