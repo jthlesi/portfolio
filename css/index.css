@@ -305,7 +305,7 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
-  left: 750px;
+  left: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -364,104 +364,78 @@ html, body {
   display: flex;
   flex-wrap: wrap;
 }
-#square #portfolio .container #project_left {
-  width: 50%;
+#square #portfolio .container #project_wrap {
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-#square #portfolio .container #project_left .project {
-  border: 1px solid rgb(51, 51, 51);
   position: relative;
   overflow: hidden;
 }
-#square #portfolio .container #project_left .project img {
-  width: 100%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#square #portfolio .container #project_left .project .text_hover {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(51, 51, 51);
-  text-align: center;
-}
-#square #portfolio .container #project_left .project .text_hover p {
-  width: 100%;
-}
-#square #portfolio .container #project_left .project .text_hover .hover_btn {
-  width: 100px;
-  height: 30px;
-  border: 1px solid rgb(51, 51, 51);
-}
-#square #portfolio .container #project_left .project .text_hover .hover_btn p {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#square #portfolio .container #project_left #project {
-  width: 100%;
-  height: 40%;
-}
-#square #portfolio .container #project_left #project p {
-  font-size: 6em;
-  font-weight: 900;
+#square #portfolio .container #project_wrap #project_title {
+  height: 100px;
   color: white;
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: -1px 0 rgb(51, 51, 51), 0 1px rgb(51, 51, 51), 1px 0 rgb(51, 51, 51), 0 -1px rgb(51, 51, 51);
+}
+#square #portfolio .container #project_wrap #project_title #project_num {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#square #portfolio .container #project_left #project_1 {
-  width: 34%;
-  height: 60%;
-  background: white;
-}
-#square #portfolio .container #project_left #project_2 {
-  width: 33%;
-  height: 60%;
-  background: white;
-}
-#square #portfolio .container #project_left #project_3 {
-  width: 33%;
-  height: 60%;
-  background: white;
-}
-#square #portfolio .container #project_right {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background: white;
-}
-#square #portfolio .container #project_right .project {
-  border: 1px solid rgb(51, 51, 51);
   overflow: hidden;
 }
-#square #portfolio .container #project_right .project img {
+#square #portfolio .container #project_wrap #project_title #project_num span:not(:first-of-type) {
+  display: none;
+}
+#square #portfolio .container #project_wrap #card_view {
+  width: 100%;
+  height: calc(100% - 100px);
+  overflow: hidden;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap {
+  width: 100%;
+  height: auto;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card {
+  width: 100%;
+  height: 40vh;
+  margin-top: -2%;
+  position: relative;
+  filter: drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card::before {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
+  background: white;
+  display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
+  height: 4.4vh;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card {
+  background: white;
+  -webkit-clip-path: polygon(4.8vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 4.8vh);
+          clip-path: polygon(4.8vh 0%, 100% 0%, 100% 100%, 0% 100%, 0% 4.8vh);
+  width: 100%;
+  height: 40vh;
+  position: absolute;
+  top: 0px;
+  font-size: 5em;
+  color: rgb(51, 51, 51);
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card img {
   width: 100%;
 }
-#square #portfolio .container #project_right #project_4 {
-  width: 40%;
-  height: 100%;
+#square #portfolio .container #project_wrap #card_view #card_wrap #card_1 {
+  margin-top: 5vh;
 }
-#square #portfolio .container #project_right #project_UD {
-  width: 60%;
-  height: 100%;
-}
-#square #portfolio .container #project_right #project_UD #project_5 {
-  width: 100%;
-  height: 50%;
-}
-#square #portfolio .container #project_right #project_UD #project_6 {
-  width: 100%;
-  height: 50%;
+#square #portfolio .container #project_wrap #card_view #card_wrap #card_1::before {
+  content: "";
+  width: 7px;
+  height: 4.5vh;
+  background: white;
+  display: inline-block;
+  transform: skew(-45deg);
+  margin-left: 7px;
+  background: url(../img/project_1_main.jpg) !important;
 }
 #square #portfolio .container .popup {
   display: none;
@@ -583,6 +557,71 @@ html, body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+#card_1::before {
+  background: url(../img/project_1_main_gray.jpg) !important;
+}
+
+#card_2::before {
+  background: url(../img/project_2_main_gray.jpg) !important;
+}
+
+#card_3::before {
+  background: url(../img/project_3_main_gray.jpg) !important;
+}
+
+#card_4::before {
+  background: url(../img/project_4_main_gray.jpg) !important;
+}
+
+#card_5::before {
+  background: url(../img/project_5_main_gray.jpg) !important;
+}
+
+#card_6::before {
+  background: url(../img/project_6_main_gray.jpg) !important;
+}
+
+#card_1.gray::before {
+  background: url(../img/project_1_main.jpg) !important;
+}
+
+#card_2.gray::before {
+  background: url(../img/project_2_main.jpg) !important;
+}
+
+#card_3.gray::before {
+  background: url(../img/project_3_main.jpg) !important;
+}
+
+#card_4.gray::before {
+  background: url(../img/project_4_main.jpg) !important;
+}
+
+#card_5.gray::before {
+  background: url(../img/project_5_main.jpg) !important;
+}
+
+#card_6.gray::before {
+  background: url(../img/project_6_main.jpg) !important;
+}
+
+@-webkit-keyframes count-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes count-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 @-webkit-keyframes cursor-spin {
   0% {
     transform: rotate(0deg);
@@ -591,7 +630,6 @@ html, body {
     transform: rotate(360deg);
   }
 }
-
 @keyframes cursor-spin {
   0% {
     transform: rotate(0deg);
