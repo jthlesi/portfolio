@@ -403,23 +403,22 @@ html, body{
                     p{
                         display: inline-block;
 
-                    }
-                    #project_num{
-                        position: relative;
-                        overflow: hidden;
-                        span:not(:first-of-type) {
-                            display: none;
+                        #project_num{
+                            overflow: hidden;
+                            span:not(:first-of-type) {
+                                display: none;
+                            }
+                        }
+                        #project_desc {
+                            overflow: hidden;
+    
+                            font-size: 30px;
+                            span:not(:first-of-type) {
+                                display: none;
+                            }
                         }
                     }
-                    #project_desc {
-                        position: relative;
-                        overflow: hidden;
 
-                        font-size: 30px;
-                        span:not(:first-of-type) {
-                            display: none;
-                        }
-                    }
                 }
                 #card_view {
                     width: 100%;
@@ -525,7 +524,39 @@ html, body{
         height: 100vh;
         top: 150vh;
         .container {
-            background: khaki;
+            #left_text{
+                width: 1000px;
+                height: 100%;
+                font-size: 100px;
+                font-weight: 900;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                .line {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 120px;
+                    .contact {
+
+                        position: relative;
+                        color: white;
+                        text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
+                        transform: rotate(0deg);
+                    }
+                    .hide_text{
+                        position: relative;
+                        color: $back;
+                        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+                    }
+                    #text_ani_6{
+                        width: 83px;
+                        height: 141px;
+                    }
+                }
+
+            }
         }
     }
 }
@@ -570,14 +601,6 @@ html, body{
     }
 }
 
-@keyframes count-up {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
 
 // 커서 애니메이션
 @keyframes cursor-spin {
@@ -649,6 +672,115 @@ html, body{
     }
 }
 
+@keyframes text_hide {
+    0%{
+        // transform: translateY(0%);
+        top:0;
+    }
+    100%{
+        // transform: translateY(100%);
+        top:100%;
+    }
+}
+
+@keyframes contact_1 {
+    0%{
+        top:0;
+    }
+    50%{
+        top:0;
+    }
+    100% {
+        top:120px;
+    }
+}
+@keyframes contact_2 {
+    0%{
+        top:0;
+        left:0px;
+    }
+    50%{
+        left:-60px;
+        top:0;
+    }
+    100% {
+        left:-60px;
+        top:-240px;
+    }
+}
+@keyframes contact_3 {
+    0%{
+        top:0;
+        left:0;
+    }
+    50%{
+        top:0;
+        left:85px;
+    }
+    100% {
+        top:-120px;
+        left:85px;
+    }
+}
+
+@keyframes contact_3_u {
+    0%{
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+
+}
+
+@keyframes contact_4 {
+    0%{
+        top:0;
+        left:0;
+    }
+    50%{
+        top:0;
+        left:165px;
+    }
+    100% {
+        top:240px;
+        left:165px;
+    }
+}
+@keyframes contact_5 {
+    0%{
+        left:0;
+    }
+    50%{
+        left:0px;
+    }
+    100% {
+        left:120px;
+    }
+}
+@keyframes contact_6 {
+    0%{
+        left:0;
+    }
+    50%{
+        left:0px;
+    }
+    100% {
+        left:50px;
+    }
+}
+@keyframes contact_7 {
+    0%{
+        left:0;
+    }
+    50%{
+        left:0px;
+    }
+    100% {
+        left:-130px;
+    }
+}
 
 @keyframes square_intro {
     from {

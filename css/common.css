@@ -11,5 +11,6 @@ ul,li,ol {
 
 a {
     text-decoration: none; 
-    color:black
+    color:black;
+    cursor: none;
 }

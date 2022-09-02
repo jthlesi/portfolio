@@ -76,7 +76,6 @@ $(window).on("scroll wheel", function(event){
             stop_2();
         }else if(scrollCount==3){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_num").children().eq(1).hide().prev().show().css({"animation":"count-up 2s linear"});
             $("#project_desc").children().eq(1).hide().prev().show().css({"animation":"count-up 2s linear"});
 
@@ -84,7 +83,6 @@ $(window).on("scroll wheel", function(event){
             stop_2();
         } else if(scrollCount==4){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_num").children().eq(2).hide().prev().show().css({"animation":"count-up 2s linear"});
             $("#project_desc").children().eq(2).hide().prev().show().css({"animation":"count-up 2s linear"});
 
@@ -93,7 +91,6 @@ $(window).on("scroll wheel", function(event){
             stop_1();
         } else if(scrollCount==5){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_num").children().eq(3).hide().prev().show().css({"animation":"count-up 2s linear"});
             $("#project_desc").children().eq(3).hide().prev().show().css({"animation":"count-up 2s linear"});
 
@@ -102,7 +99,6 @@ $(window).on("scroll wheel", function(event){
             stop_1();
         } else if(scrollCount==6){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_num").children().eq(4).hide().prev().show().css({"animation":"count-up 2s linear"});
             $("#project_desc").children().eq(4).hide().prev().show().css({"animation":"count-up 2s linear"});
 
@@ -112,7 +108,6 @@ $(window).on("scroll wheel", function(event){
             stop_1();
         } else if(scrollCount==7){
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#project_num").children().eq(5).hide().prev().show().css({"animation":"count-up 2s linear"});
             $("#project_desc").children().eq(5).hide().prev().show().css({"animation":"count-up 2s linear"});
 
@@ -216,58 +211,66 @@ $(window).on("scroll wheel", function(event){
             s=true;
             $("#introduce").css({"animation":"square_intro 1s linear both"});
             $("#portfolio").css({"animation":"square_port 1s linear both"});
-            $(".project_img").stop(true,true).css({"margin-top":0});
-            setTimeout(function(){
-                $(".project_img").eq(0).stop().animate({"margin-top": $(".img_box").eq(0).height()-$(".project_img").eq(0).height()},5000,function(){
-                    $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-                });
-            },1000)
+
             stop_2();
-        } else if(scrollCount==4){
-            s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
-            $("#card_wrap").stop().animate({"margin-top":"-37vh"});
-            $("#project_num").children().eq(0).hide().next().show().css({"animation":"count-up 2s linear"});
-            $("#project_desc").children().eq(0).hide().next().show().css({"animation":"count-up 2s linear"});
-            stop_1();
-        } else if(scrollCount==5){
-            s=true;
+        // } else if(scrollCount==4){
+        //     s=true;
+        //     $("#card_wrap").stop().animate({"margin-top":"-37vh"});
+        //     $("#project_num").children().eq(0).hide().next().show();
+        //     $("#project_desc").children().eq(0).hide().next().show();
+        //     stop_1();
+        // } else if(scrollCount==5){
+        //     s=true;
 
-            $("#project_num").children().eq(1).hide().next().show().css({"animation":"count-up 2s linear"});
-            $("#project_desc").children().eq(1).hide().next().show().css({"animation":"count-up 2s linear"});
+        //     $("#project_num").children().eq(1).hide().next().show();
+        //     $("#project_desc").children().eq(1).hide().next().show();
 
-            $("#card_wrap").stop().animate({"margin-top":"-74vh"});
-            stop_1();
-        } else if(scrollCount==6){
-            s=true;
+        //     $("#card_wrap").stop().animate({"margin-top":"-74vh"});
+        //     stop_1();
+        // } else if(scrollCount==6){
+        //     s=true;
 
-            $("#project_num").children().eq(2).hide().next().show().css({"animation":"count-up 2s linear"});
-            $("#project_desc").children().eq(2).hide().next().show().css({"animation":"count-up 2s linear"});
+        //     $("#project_num").children().eq(2).hide().next().show();
+        //     $("#project_desc").children().eq(2).hide().next().show();
 
-            $("#card_wrap").stop().animate({"margin-top":"-111vh"});
-            stop_1();
-        } else if(scrollCount==7){
-            s=true;
+        //     $("#card_wrap").stop().animate({"margin-top":"-111vh"});
+        //     stop_1();
+        // } else if(scrollCount==7){
+        //     s=true;
 
-            $("#project_num").children().eq(3).hide().next().show().css({"animation":"count-up 2s linear"});
-            $("#project_desc").children().eq(3).hide().next().show().css({"animation":"count-up 2s linear"});
+        //     $("#project_num").children().eq(3).hide().next().show();
+        //     $("#project_desc").children().eq(3).hide().next().show();
 
-            $("#card_wrap").stop().animate({"margin-top":"-148vh"});
-            stop_1();
-        }  else if(scrollCount==8){
-            s=true;
+        //     $("#card_wrap").stop().animate({"margin-top":"-148vh"});
+        //     stop_1();
+        // }  else if(scrollCount==8){
+        //     s=true;
  
-            $("#project_num").children().eq(4).hide().next().show().css({"animation":"count-up 2s linear"});
-            $("#project_desc").children().eq(4).hide().next().show().css({"animation":"count-up 2s linear"});
+        //     $("#project_num").children().eq(4).hide().next().show();
+        //     $("#project_desc").children().eq(4).hide().next().show();
 
-            $("#card_wrap").stop().animate({"margin-top":"-180vh"});
-            $("#portfolio").css({"left":0});
-            stop_2();
+        //     $("#card_wrap").stop().animate({"margin-top":"-180vh"});
+        //     $("#portfolio").css({"left":0});
+        //     stop_2();
         } else if (scrollCount==9) {
             s=true;
-            $(".project_img").stop(true,true).css({"margin-top":0});
             $("#portfolio").css({"animation":"square_portfolio 1s linear both"});
             $("#contact").css({"animation":"square_contact 1s linear both"});
+            setTimeout(function(){
+                $(".hide_text").css({"animation":"text_hide 1.5s linear both"});
+            },2000);
+            setTimeout(function(){
+                $(".line").eq(1).css({"animation":"contact_1 2s linear both"});
+                $(".line").eq(4).css({"animation":"contact_2 2s linear both"});
+                $(".line").eq(3).css({"animation":"contact_3 2s linear both"});
+                $(".line").eq(0).css({"animation":"contact_4 2s linear both"});
+                $("#text_ani_3").css({"animation":"contact_5 2s linear both"});
+                $("#text_ani_4").css({"animation":"contact_6 2s linear both"});
+                $("#text_ani_5").css({"animation":"contact_7 2s linear both"});
+            },3500);
+            setTimeout(function(){
+                $("#text_ani_6").css({"animation":"contact_3_u 1s linear both"});
+            },5600)
             stop_2();
         } else if (scrollCount==10) {
             s=true;
@@ -301,6 +304,7 @@ var skill = function (){
     var circle_60 = setInterval(function(){
         if(i<61){
             $("#photoshop").css({"background":"conic-gradient(#00d4ff 0% "+i+"%, #333333 "+i+"% 100%)"});
+            $("#java").css({"background":"conic-gradient(#e6a329 0% "+i+"%, #333333 "+i+"% 100%)"});
             i++;
         } else {
             clearInterval(circle_60);
@@ -308,7 +312,6 @@ var skill = function (){
     },33.3);
     var circle_80 = setInterval(function(){
         if (i<81) {
-            $("#java").css({"background":"conic-gradient(#e6a329 0% "+i+"%, #333333 "+i+"% 100%)"});
             $("#jquery").css({"background":"conic-gradient(#193556 0% "+i+"%, #333333 "+i+"% 100%)"});
             $("#sass").css({"background":"conic-gradient(#cc6699 0% "+i+"%, #333333 "+i+"% 100%)"});
             i++;
@@ -332,57 +335,11 @@ $(document).ready(function(){
         $(".inner_card").eq(i).children("img").attr("src","img/project_"+(i+1)+"_main_gray.jpg");    
     };
     
-    // $(".btn_wrap button").on("click", function(){
-    //     var btn_idx = $(this).parent().parent().parent().index();
-    //     var btn_class = $(this).attr("class");
-    //     $(".img_box").eq(btn_idx).children("img").attr("src","img/project_"+(btn_idx+1)+"_"+btn_class+".png");
-    //     $(".project_img").stop(true,true).css({"margin-top":0});
-    //     setTimeout(function(){
-    //         $(".project_img").stop().animate({"margin-top": $(".img_box").eq(btn_idx).height()-$(".project_img").eq(btn_idx).height()},5000,function(){
-    //             $(".project_img").delay(6000).stop().animate({"margin-top":0},2000);
-    //         });
-    //     },500)
-    // })
-
-    // $(".img_box").on("click", function(){
-    //     var idx = $(".img_box").index(this);
-    //     s=true;
-    //     $(".popup").show();
-    //     $(".view").attr("src",$(".img_box").eq(idx).children("img").attr("src"));
-    //     $(".view_box").hover(function(){
-    //         $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000);
-    //     },function(){
-    //         $(".view").stop().animate({"margin-top":0},4000);
-    //     });
-    //     $("#scroll_spin").hide();
-    // })
-
-    // $(".close, .view").on("click", function(){
-    //     s=false;
-    //     $(".view").stop(true,true).css({"margin-top":0});
-    //     $(".popup").hide();
-    //     $("#scroll_spin").show();
-    // })
-
-    // $(".img_box").hover(function(){
-    //     $(".more_up, .more_down",this).addClass("img_hover");
-    //     $(".more_wrap").show();
-    //     $(".more_up").stop().animate({"top":"0%"},"fast","linear");
-    //     $(".more_down").stop().animate({"top":"50%"},"fast","linear");
-    // }, function(){
-    //     $(".more_up, .more_down",this).removeClass("img_hover");
-    //     $(".more_up").stop().animate({"top":"-50%"},"fast","linear");
-    //     $(".more_down").stop().animate({"top":"100%"},"fast","linear");
-    //     $(".more_wrap").hide();
-    // })
-
-    $(".card, .view_box, .close").mouseover(function(){
+    $(".card, .pop_btn, .view_box, .close").mouseover(function(){
         $(".cursor").addClass("hover");
     }).mouseout(function(){
         $(".cursor").removeClass("hover");
     });
-
-
 
     $(".card").hover(function(){
         var hover_idx = $(this).index()
@@ -430,28 +387,29 @@ $(document).ready(function(){
             $("#sub_2").hide();
         }
         $(".popup").show();
-        $(".view").attr("src",$(".card").eq(idx).children().children("img").attr("src"));
-        $(".view_box").hover(function(){
-            $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000);
-        },function(){
-            $(".view").stop().animate({"margin-top":0},4000);
-        });
+        $(".view").attr("src","img/view/project_"+(idx+1)+"_main.jpg");
+        $(".view").stop(true,true).css({"margin-top":0});
+        setTimeout(function(){
+            $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000,function(){
+                $(".view").delay(6000).stop().animate({"margin-top":0},2000);
+            });
+        },1000)
         $("#scroll_spin").hide();
         $(".pop_btn").not("#link").on("click", function(){
             var btn_class = $(this).attr("id");
-            $(".view").attr("src","img/project_"+(idx+1)+"_"+btn_class+".jpg");
             $(".view").stop(true,true).css({"margin-top":0});
+            $(".view").attr("src","img/view/project_"+(idx+1)+"_"+btn_class+".jpg");
             setTimeout(function(){
-                $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000);
-
-            },500)
+                $(".view").stop().animate({"margin-top": $(".view_box").height()-$(".view").height()},5000,function(){
+                    $(".view").delay(6000).stop().animate({"margin-top":0},2000);
+                });
+            },1000)
         });
+        var site =["https://jthlesi.github.io/project_5/","https://jthlesi.github.io/project_4/","https://jthlesi.github.io/project_3/","https://jthlesi.github.io/projec_2/","https://kimjinseong97.github.io/Joker/","https://jthlesi.github.io/project1/"]
         $("#link").on("click", function(){
-            $(this).children("a").attr("href","https://jthlesi.github.io/portfolio/")
+            $(this).parent("a").attr("href",site[idx]);
         })
     });
-
-
 
     $(".close, .view").on("click", function(){
         s=false;
