@@ -874,18 +874,22 @@ html, body {
 }
 @-webkit-keyframes contact_3_u {
   0% {
-    transform: rotate(0deg);
+    top: 6px;
+    transform: rotateX(0deg);
   }
   100% {
-    transform: rotate(180deg);
+    top: 6px;
+    transform: rotateX(180deg);
   }
 }
 @keyframes contact_3_u {
   0% {
-    transform: rotate(0deg);
+    top: 6px;
+    transform: rotateX(0deg);
   }
   100% {
-    transform: rotate(180deg);
+    top: 6px;
+    transform: rotateX(180deg);
   }
 }
 @-webkit-keyframes contact_4 {

@@ -260,17 +260,19 @@ $(window).on("scroll wheel", function(event){
                 $(".hide_text").css({"animation":"text_hide 1.5s linear both"});
             },2000);
             setTimeout(function(){
-                $(".line").eq(1).css({"animation":"contact_1 2s linear both"});
-                $(".line").eq(4).css({"animation":"contact_2 2s linear both"});
-                $(".line").eq(3).css({"animation":"contact_3 2s linear both"});
-                $(".line").eq(0).css({"animation":"contact_4 2s linear both"});
-                $("#text_ani_3").css({"animation":"contact_5 2s linear both"});
-                $("#text_ani_4").css({"animation":"contact_6 2s linear both"});
-                $("#text_ani_5").css({"animation":"contact_7 2s linear both"});
+                $(".line").eq(1).css({"animation":"contact_1 1s linear both"});
+                $(".line").eq(4).css({"animation":"contact_2 1s linear both"});
+                $(".line").eq(3).css({"animation":"contact_3 1s linear both"});
+                $(".line").eq(0).css({"animation":"contact_4 1s linear both"});
+                $("#text_ani_3").css({"animation":"contact_5 1s linear both"});
+                $("#text_ani_4").css({"animation":"contact_6 1s linear both"});
+                $("#text_ani_5").css({"animation":"contact_7 1s linear both"});
             },3500);
             setTimeout(function(){
+                $("#text_ani_6").css({"position":"absolute"});
+
                 $("#text_ani_6").css({"animation":"contact_3_u 1s linear both"});
-            },5600)
+            },4500)
             stop_2();
         } else if (scrollCount==10) {
             s=true;
