@@ -436,20 +436,31 @@ html, body {
 }
 #square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn {
   display: none;
-  width: 120px;
-  height: 50px;
+  width: 600px;
+  height: 25vh;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px;
   border-radius: 5px;
-}
-#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn p {
   color: white;
   font-size: 20px;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn p:last-of-type {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid white;
+  position: absolute;
+  padding: 5px;
+  text-align: center;
+  font-size: 17px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
 }
 #square #portfolio .container #project_wrap #card_view #card_wrap #card_1 {
   margin-top: 5vh;
@@ -504,6 +515,10 @@ html, body {
   height: 100vh;
   top: 150vh;
 }
+#square #contact .container {
+  position: relative;
+  display: block;
+}
 #square #contact .container #left_text {
   width: 1000px;
   height: 100%;
@@ -513,6 +528,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  left: 0px;
 }
 #square #contact .container #left_text .line {
   position: relative;
@@ -534,6 +550,34 @@ html, body {
 #square #contact .container #left_text .line #text_ani_6 {
   width: 83px;
   height: 141px;
+}
+#square #contact .container #contact_wrap {
+  position: absolute;
+  bottom: 120px;
+  left: 0px;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+}
+#square #contact .container #contact_wrap .contact_box {
+  display: none;
+  width: 30%;
+  height: 100%;
+}
+#square #contact .container #contact_wrap .contact_box p {
+  padding: 20px;
+  color: white;
+  font-size: 1.5em;
+  width: 300px;
+  height: 100px;
+  border: 1px solid white;
+  -webkit-clip-path: polygon(30px 0%, 100% 0%, 100% 70px, 270px 100%, 0% 100%, 0% 30px);
+          clip-path: polygon(30px 0%, 100% 0%, 100% 70px, 270px 100%, 0% 100%, 0% 30px);
+}
+#square #contact .container #contact_wrap .contact_box p:hover {
+  -webkit-animation: shake 0.5s linear both;
+          animation: shake 0.5s linear both;
 }
 
 #footer #cube_wrap_2 {
@@ -605,44 +649,44 @@ html, body {
   background: url(../img/project_1_main_gray.jpg) !important;
 }
 
-#card_2::before {
-  background: url(../img/project_2_main_gray.jpg) !important;
-}
-
-#card_3::before {
-  background: url(../img/project_3_main_gray.jpg) !important;
-}
-
-#card_4::before {
-  background: url(../img/project_4_main_gray.jpg) !important;
-}
-
-#card_5::before {
-  background: url(../img/project_5_main_gray.jpg) !important;
-}
-
-#card_6::before {
-  background: url(../img/project_6_main_gray.jpg) !important;
-}
-
 #card_1.gray::before {
   background: url(../img/project_1_main.jpg) !important;
+}
+
+#card_2::before {
+  background: url(../img/project_2_main_gray.jpg) !important;
 }
 
 #card_2.gray::before {
   background: url(../img/project_2_main.jpg) !important;
 }
 
+#card_3::before {
+  background: url(../img/project_3_main_gray.jpg) !important;
+}
+
 #card_3.gray::before {
   background: url(../img/project_3_main.jpg) !important;
+}
+
+#card_4::before {
+  background: url(../img/project_4_main_gray.jpg) !important;
 }
 
 #card_4.gray::before {
   background: url(../img/project_4_main.jpg) !important;
 }
 
+#card_5::before {
+  background: url(../img/project_5_main_gray.jpg) !important;
+}
+
 #card_5.gray::before {
   background: url(../img/project_5_main.jpg) !important;
+}
+
+#card_6::before {
+  background: url(../img/project_6_main_gray.jpg) !important;
 }
 
 #card_6.gray::before {
@@ -802,7 +846,7 @@ html, body {
     top: 0;
   }
   100% {
-    top: 120px;
+    top: 0px;
   }
 }
 @keyframes contact_1 {
@@ -813,7 +857,7 @@ html, body {
     top: 0;
   }
   100% {
-    top: 120px;
+    top: 0px;
   }
 }
 @-webkit-keyframes contact_2 {
@@ -827,7 +871,7 @@ html, body {
   }
   100% {
     left: -60px;
-    top: -240px;
+    top: -360px;
   }
 }
 @keyframes contact_2 {
@@ -841,7 +885,7 @@ html, body {
   }
   100% {
     left: -60px;
-    top: -240px;
+    top: -360px;
   }
 }
 @-webkit-keyframes contact_3 {
@@ -854,7 +898,7 @@ html, body {
     left: 85px;
   }
   100% {
-    top: -120px;
+    top: -240px;
     left: 85px;
   }
 }
@@ -868,7 +912,7 @@ html, body {
     left: 85px;
   }
   100% {
-    top: -120px;
+    top: -240px;
     left: 85px;
   }
 }
@@ -902,7 +946,7 @@ html, body {
     left: 165px;
   }
   100% {
-    top: 240px;
+    top: 120px;
     left: 165px;
   }
 }
@@ -916,8 +960,30 @@ html, body {
     left: 165px;
   }
   100% {
-    top: 240px;
+    top: 120px;
     left: 165px;
+  }
+}
+@-webkit-keyframes contact_5_line {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: -120px;
+  }
+}
+@keyframes contact_5_line {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: -120px;
   }
 }
 @-webkit-keyframes contact_5 {
@@ -925,7 +991,7 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: 120px;
   }
   100% {
     left: 120px;
@@ -936,7 +1002,7 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: 120px;
   }
   100% {
     left: 120px;
@@ -947,7 +1013,7 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: 50px;
   }
   100% {
     left: 50px;
@@ -958,7 +1024,7 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: 50px;
   }
   100% {
     left: 50px;
@@ -969,7 +1035,7 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: -130px;
   }
   100% {
     left: -130px;
@@ -980,10 +1046,50 @@ html, body {
     left: 0;
   }
   50% {
-    left: 0px;
+    left: -130px;
   }
   100% {
     left: -130px;
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(-1px, 1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(1px, 1px) rotate(1deg);
+  }
+  80% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(-1deg);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(-1px, 1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(1px, 1px) rotate(1deg);
+  }
+  80% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(-1deg);
   }
 }
 @-webkit-keyframes square_intro {

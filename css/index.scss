@@ -452,23 +452,34 @@ html, body{
                                 }
                                 .more_btn {
                                     display: none;
-                                    width: 120px;
-                                    height: 50px;
+                                    width: 600px;
+                                    height: 25vh;
                                     @include center;
                                     position: absolute;
-                                    background: rgba(0, 0, 0, 0.5);
+                                    background: rgba(0, 0, 0, 0.7);
                                     padding: 10px;
                                     border-radius: 5px;
-                                    p {
-                                        color: white;
-                                        font-size: 20px;
+                                    color: white;
+                                    font-size: 20px;
+
+                                    p:last-of-type {
+                                        width: 120px;
+                                        height: 40px;
+                                        border-radius: 5px;
+                                        border: 1px solid white;
+                                        position: absolute;
+                                        padding: 5px;
+                                        text-align: center;
+                                        font-size: 17px;
+                                        left:50%;
+                                        bottom:20px;
+                                        transform: translateX(-50%);
                                     }
                                 }
                             }
                         }
                         #card_1{
                             margin-top: 5vh;
-
                         }
     
                     }
@@ -524,6 +535,8 @@ html, body{
         height: 100vh;
         top: 150vh;
         .container {
+            position: relative;
+            display:block;
             #left_text{
                 width: 1000px;
                 height: 100%;
@@ -533,13 +546,13 @@ html, body{
                 flex-direction: column;
                 justify-content: center;
                 position: relative;
+                left:0px;
                 .line {
                     position: relative;
                     overflow: hidden;
                     width: 100%;
                     height: 120px;
                     .contact {
-
                         position: relative;
                         color: white;
                         text-shadow: -1px 0 $back, 0 1px $back, 1px 0 $back, 0 -1px $back;
@@ -556,6 +569,32 @@ html, body{
                     }
                 }
 
+            }
+            #contact_wrap{
+                position: absolute;
+                bottom:120px;
+                left:0px;
+                width: 100%;
+                height: 25vh;
+                display: flex;
+                justify-content: space-around;
+                .contact_box {
+                    display: none;
+                    width: 30%;
+                    height: 100%;
+                    p {
+                        padding: 20px;
+                        color: white;
+                        font-size: 1.5em;
+                        width: 300px;
+                        height: 100px;
+                        border: 1px solid white;
+                        clip-path: polygon(30px 0%, 100% 0%, 100% 70px, 270px 100%, 0% 100%, 0% 30px);
+                        &:hover {
+                            animation: shake 0.5s linear both;
+                        }
+                    }
+                }
             }
         }
     }
@@ -593,14 +632,10 @@ html, body{
     #card_#{$i}::before {
         background: url(../img/project_#{$i}_main_gray.jpg)!important;
     }
-}
-
-@for $i from 1 through 6 {
     #card_#{$i}.gray::before {
         background: url(../img/project_#{$i}_main.jpg)!important;
     }
 }
-
 
 // 커서 애니메이션
 @keyframes cursor-spin {
@@ -691,12 +726,12 @@ html, body{
         top:0;
     }
     100% {
-        top:120px;
+        top:0px;
     }
 }
 @keyframes contact_2 {
     0%{
-        top:0;
+        top:-0;
         left:0px;
     }
     50%{
@@ -705,7 +740,7 @@ html, body{
     }
     100% {
         left:-60px;
-        top:-240px;
+        top:-360px;
     }
 }
 @keyframes contact_3 {
@@ -718,7 +753,7 @@ html, body{
         left:85px;
     }
     100% {
-        top:-120px;
+        top:-240px;
         left:85px;
     }
 }
@@ -746,8 +781,19 @@ html, body{
         left:165px;
     }
     100% {
-        top:240px;
+        top:120px;
         left:165px;
+    }
+}
+@keyframes contact_5_line {
+    0%{
+        top:0;
+    }
+    50%{
+        top:0px;
+    }
+    100%{
+        top:-120px
     }
 }
 @keyframes contact_5 {
@@ -755,7 +801,7 @@ html, body{
         left:0;
     }
     50%{
-        left:0px;
+        left:120px;
     }
     100% {
         left:120px;
@@ -766,7 +812,7 @@ html, body{
         left:0;
     }
     50%{
-        left:0px;
+        left:50px;
     }
     100% {
         left:50px;
@@ -777,11 +823,32 @@ html, body{
         left:0;
     }
     50%{
-        left:0px;
+        left:-130px;
     }
     100% {
         left:-130px;
     }
+}
+
+@keyframes shake {
+	0%{
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	20%{
+		transform: translate(-1px, 1px) rotate(-1deg);
+	}
+	40%{
+		transform: translate(-1px, 1px) rotate(1deg);
+	}
+	60%{
+		transform: translate(1px, 1px) rotate(1deg);
+	}
+	80%{
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	100%{
+		transform: translate(1px, 1px) rotate(-1deg);
+	}
 }
 
 @keyframes square_intro {
