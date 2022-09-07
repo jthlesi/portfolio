@@ -51,7 +51,7 @@ $(window).on("scroll wheel", function(event){
             s=true;
             $(".skill_text p").hide();
             $("#title_2").hide().css({"font-size":"5em","left":"50%"});
-            $(".circle").stop().animate({"top":"50%","left":"50%"},1000);
+            $(".circle").stop().animate({"top":"50%","left":"50%"},700);
             $(".circle").css({"background":"#333333"});
             $(".circle").mouseover(function(){
                 $(".skill_text p").hide();
@@ -61,11 +61,11 @@ $(window).on("scroll wheel", function(event){
                 $(".circle").stop().animate({"width":"500px","height":"500px"},500);
                 $(".inner_circle").stop().animate({"width":"450px","height":"450px"},500);
 
-            },1000)
+            },700)
             setTimeout(function(){
                 $("#profile").css({"animation":"square_profile_back 1s linear both"});
                 $("#skill").css({"animation":"square_skill_back 1s linear both"});
-            },1500);
+            },1200);
 
             stop_3();
         } else if(scrollCount==2){
@@ -176,23 +176,23 @@ $(window).on("scroll wheel", function(event){
             $("#profile").css({"animation":"square_profile 1s linear both"});
             $("#skill").css({"animation":"square_skill 1s linear both"});
             setTimeout(function(){
-                $("#skill span").show().css({"animation":"text_rotate 1s both"});
+                $("#skill span").show().css({"animation":"text_rotate 0.7s both"});
                 $(".circle").stop().animate({"width":"450px","height":"450px"},1000);
                 $(".inner_circle").stop().animate({"width":"400px","height":"400px"},1000);
             },1000);
             setTimeout(function(){
-                $("#h").css({"animation":"h 1s both"});
-                $("#t").css({"animation":"t 1s both"});
-                $("#m").css({"animation":"m 1s both"});
-                $("#l").css({"animation":"l 1s both"});
-            },2000);
+                $("#h").css({"animation":"h 0.7s both"});
+                $("#t").css({"animation":"t 0.7s both"});
+                $("#m").css({"animation":"m 0.7s both"});
+                $("#l").css({"animation":"l 0.7s both"});
+            },1700);
             setTimeout(function(){
                 $(".circle").stop().animate({"top":"200px","left":"100px","width":"200px","height":"200px"});
                 $(".inner_circle").stop().animate({"width":"150px","height":"150px"});
                 $(".circle").css({"position":"absolute"});
                 $("#skill_title span").hide();
                 $("#title_2").show();
-            },3000);
+            },2400);
             setTimeout(function(){
                 $(".circle").eq(0).stop().animate({"top":"200px","left":"100px",});
                 $(".circle").eq(1).show().stop().animate({"top":"200px","left":"320px"});
@@ -208,8 +208,8 @@ $(window).on("scroll wheel", function(event){
                 $("#skill_text_1 p").show().each(function() {
                     this.style.animation = `text_fade 1s ${(timeSet += 100)}ms forwards`
                 });
-            },3500);
-            setTimeout(skill,4000);
+            },3000);
+            setTimeout(skill,3700);
             setTimeout(function(){
                 $(".circle").mouseover(function(){
                     var circleIdx = $(".circle").index(this);
@@ -220,7 +220,7 @@ $(window).on("scroll wheel", function(event){
                     });
                     $("#title_2").html($(".circle").eq(circleIdx).attr("id").toUpperCase());
                 });
-            },4500);
+            },4200);
             stop_4();
         } else if(scrollCount==3){
             s=true;
