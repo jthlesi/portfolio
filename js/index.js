@@ -49,7 +49,7 @@ $(window).on("scroll wheel", function(event){
             stop_3();
         } else if (scrollCount==1){
             s=true;
-            $(".skill_text p").hide();
+            $(".skill_text").hide();
             $("#title_2").hide().css({"font-size":"5em","left":"50%"});
             $(".circle").stop().animate({"top":"50%","left":"50%"},700);
             $(".circle").css({"background":"#333333"});
@@ -83,7 +83,7 @@ $(window).on("scroll wheel", function(event){
             $(".card").eq(0).addClass("gray").siblings().removeClass("gray");
 
             $("#card_wrap").stop().animate({"margin-top":"0vh"});
-            stop_2();
+            stop_1();
         } else if(scrollCount==4){
             s=true;
             $("#project_num").children().eq(2).hide().prev().show().css({"animation":"count-up 2s linear"});
@@ -205,6 +205,7 @@ $(window).on("scroll wheel", function(event){
                 $("#title_2").css({"position":"absolute"});
                 $("#title_2").animate({"font-size":"10em","left":"-500px","top":"-50px"});
                 let timeSet = 100;
+                $(".skill_text").eq(0).show();
                 $("#skill_text_1 p").show().each(function() {
                     this.style.animation = `text_fade 1s ${(timeSet += 100)}ms forwards`
                 });
@@ -292,7 +293,6 @@ $(window).on("scroll wheel", function(event){
                 $(".hide_text").css({"animation":"text_hide 1.5s linear both"});
             },2000);
             setTimeout(function(){
-                $(".line").eq(1).css({"animation":"contact_1 1s linear both"});
                 $(".line").eq(4).css({"animation":"contact_2 1s linear both"});
                 $(".line").eq(3).css({"animation":"contact_3 1s linear both"});
                 $(".line").eq(0).css({"animation":"contact_4 1s linear both"});
@@ -447,7 +447,7 @@ $(document).ready(function(){
         });
         var site =["https://jthlesi.github.io/project_5/","https://jthlesi.github.io/project_4/","https://jthlesi.github.io/project_3/","https://jthlesi.github.io/projec_2/","https://kimjinseong97.github.io/Joker/","https://jthlesi.github.io/project1/"]
         $("#link").on("click", function(){
-            $(this).parent("a").attr("href",site[idx]);
+            $(this).attr("href",site[idx]);
         })
     });
 

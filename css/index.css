@@ -179,9 +179,13 @@ html, body {
   position: absolute;
   top: 0;
   height: 45vh;
-  background: white;
+  border: 7px solid white;
   -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
           clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(300px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
+}
+#square #introduce .container #pic_outer #pic img {
+  width: 100%;
+  height: 100%;
 }
 #square #introduce .container #about_outer {
   margin-left: 100px;
@@ -217,9 +221,15 @@ html, body {
   height: 45vh;
   position: absolute;
   top: 0;
-  background: forestgreen;
+  border: 7px solid white;
   -webkit-clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
           clip-path: polygon(5.4vh 0%, 100% 0%, 100% 39.6vh, calc(700px - 5.4vh) 100%, 0% 100%, 0% 5.4vh);
+}
+#square #introduce .container #about_outer #about p {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 20px;
 }
 #square #introduce .container #comment_outer {
   width: 1100px;
@@ -256,9 +266,22 @@ html, body {
   height: 30vh;
   position: absolute;
   top: 0;
-  background: firebrick;
+  border: 7px solid white;
   -webkit-clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
           clip-path: polygon(4.5vh 0%, 100% 0%, 100% 25.5vh, calc(1100px - 4.5vh) 100%, 0% 100%, 0% 4.5vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#square #introduce .container #comment_outer #comment p {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+#square #introduce .container #comment_outer #comment p span {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: rgb(51, 51, 51);
 }
 #square #introduce #skill {
   top: 150vh;
@@ -344,7 +367,7 @@ html, body {
 }
 #square #introduce #skill #circle_wrap #skill_text_wrap {
   width: 25%;
-  height: 100%;
+  height: 600px;
   color: white;
   position: absolute;
   right: 0px;
@@ -352,9 +375,15 @@ html, body {
 #square #introduce #skill #circle_wrap #skill_text_wrap .skill_text {
   width: 100%;
   height: auto;
-  top: 35%;
+  top: 50%;
+  transform: translateY(-50%);
   position: absolute;
   font-size: 1.1em;
+  -webkit-clip-path: polygon(32.5px 0%, 100% 0%, 100% calc(100% - 32.5px), 292.5px 100%, 0% 100%, 0% 32.5px);
+          clip-path: polygon(32.5px 0%, 100% 0%, 100% calc(100% - 32.5px), 292.5px 100%, 0% 100%, 0% 32.5px);
+  padding: 20px;
+  border: 1px solid white;
+  display: none;
 }
 #square #introduce #skill #circle_wrap #skill_text_wrap .skill_text p {
   margin-bottom: 10px;
@@ -385,20 +414,20 @@ html, body {
   display: flex;
   justify-content: space-between;
 }
-#square #portfolio .container #project_wrap #project_title p {
+#square #portfolio .container #project_wrap #project_title div {
   display: inline-block;
 }
-#square #portfolio .container #project_wrap #project_title p #project_num {
+#square #portfolio .container #project_wrap #project_title div #project_num {
   overflow: hidden;
 }
-#square #portfolio .container #project_wrap #project_title p #project_num span:not(:first-of-type) {
+#square #portfolio .container #project_wrap #project_title div #project_num span:not(:first-of-type) {
   display: none;
 }
-#square #portfolio .container #project_wrap #project_title p #project_desc {
+#square #portfolio .container #project_wrap #project_title div #project_desc {
   overflow: hidden;
   font-size: 30px;
 }
-#square #portfolio .container #project_wrap #project_title p #project_desc span:not(:first-of-type) {
+#square #portfolio .container #project_wrap #project_title div #project_desc span:not(:first-of-type) {
   display: none;
 }
 #square #portfolio .container #project_wrap #card_view {
@@ -453,13 +482,19 @@ html, body {
   background: rgba(0, 0, 0, 0.7);
   padding: 10px;
   border-radius: 5px;
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn p {
   color: white;
   font-size: 20px;
+  margin-bottom: 5px;
 }
-#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn p:last-of-type {
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn button {
+  cursor: none;
   width: 120px;
   height: 40px;
   border-radius: 5px;
+  color: white;
+  background: transparent;
   border: 1px solid white;
   position: absolute;
   padding: 5px;
@@ -468,6 +503,11 @@ html, body {
   left: 50%;
   bottom: 20px;
   transform: translateX(-50%);
+}
+#square #portfolio .container #project_wrap #card_view #card_wrap .card .inner_card .more_btn button:hover {
+  background: white;
+  color: rgb(51, 51, 51);
+  border: 1px solid rgb(51, 51, 51);
 }
 #square #portfolio .container #project_wrap #card_view #card_wrap #card_1 {
   margin-top: 5vh;
@@ -507,12 +547,25 @@ html, body {
   height: 500px;
   position: absolute;
   top: 5%;
-  left: 10%;
+  left: 13%;
 }
 #square #portfolio .container .popup .btn_box .pop_btn {
   width: 100px;
   height: 50px;
   background: white;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+#square #portfolio .container .popup .btn_box .pop_btn:hover {
+  background: rgb(51, 51, 51);
+  color: white;
+  border: 2px solid white;
 }
 #square #portfolio .container .popup .btn_box #sub_2 {
   display: none;
@@ -843,28 +896,6 @@ html, body {
   }
   100% {
     top: 100%;
-  }
-}
-@-webkit-keyframes contact_1 {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 0;
-  }
-  100% {
-    top: 0px;
-  }
-}
-@keyframes contact_1 {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 0;
-  }
-  100% {
-    top: 0px;
   }
 }
 @-webkit-keyframes contact_2 {
