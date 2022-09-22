@@ -367,10 +367,10 @@ var skill = function (){
 }
 
 $(document).ready(function(){
-    $(".inner_card").eq(0).children("img").attr("src","img/project_1_main.jpg");    
-    for (i=1;i<7;i++){
-        $(".inner_card").eq(i).children("img").attr("src","img/project_"+(i+1)+"_main_gray.jpg");    
-    };
+    // $(".inner_card").eq(0).children("img").attr("src","img/project_1_main.jpg");    
+    // for (i=1;i<7;i++){
+    //     $(".inner_card").eq(i).children("img").attr("src","img/project_"+(i+1)+"_main_gray.jpg");    
+    // };
 
     $(".card, .pop_btn, .view_box, .close").mouseover(function(){
         $(".cursor").addClass("hover");
